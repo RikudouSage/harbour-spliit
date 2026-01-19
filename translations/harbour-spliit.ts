@@ -108,5 +108,9 @@
         <source>Category</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="category_select.title">
+        <source>Choose a category</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

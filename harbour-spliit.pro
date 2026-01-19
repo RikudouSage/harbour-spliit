@@ -42,6 +42,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/DefaultPage.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
+    qml/js/objects.js \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
     qml/pages/GroupDetailPage.qml \

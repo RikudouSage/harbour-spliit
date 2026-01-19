@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 import "../components"
+import "../js/objects.js" as Objects
 
 DefaultDialog {
     property var categories: ({})
@@ -91,7 +92,7 @@ DefaultDialog {
 
         onClicked: {
             const dialog = pageStack.push("SelectCategoryDialog.qml", {
-                categories: categories,
+                categories: Objects.values(categories),
             });
             dialog.itemSelected.connect(function(id) {
                 categoryId = id;
