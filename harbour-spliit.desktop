@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-spliit
+Exec=harbour-spliit
+Name=Spliit
+
+[X-Sailjail]
+OrganizationName=dev.chrastecky
+ApplicationName=Spliit
+Permissions=Internet

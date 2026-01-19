@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1">
+<context>
+    <name></name>
+    <message id="page.error.default_text">
+        <source>There was an error, please try again later or contact the developer with details about what you were doing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.initialization_failed">
+        <source>Initialization Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.initialization_failed_description">
+        <source>The initialization of the app failed. There&apos;s not much you can do about it except contacting the developer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.title">
+        <source>Select a Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.no_groups">
+        <source>There are no groups saved. You can use the pull-down menu to add a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.help_text">
+        <source>Please provide the group ID below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.group_id_field.label">
+        <source>Group ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.add_group">
+        <source>Add a group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.invalid_group_provided">
+        <source>Invalid group provided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.error.generic">
+        <source>There was an error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.error.not_found">
+        <source>The group does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.group_name_label">
+        <source>Group name: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.loading">
+        <source>Loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.failed_fetching">
+        <source>Failed fetching list of groups, please  try again later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.stored_groups">
+        <source>Saved Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.change_group">
+        <source>Change group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.remove">
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_group.error.fetch_more">
+        <source>Failed fetching more expenses from the api</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.no_expenses">
+        <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.add_expense">
+        <source>Add expense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.cancel">
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.add">
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.name">
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.date">
+        <source>Expense date</source>
+        <oldsource>&lt;strong&gt;Expense date&lt;/strong&gt;: %1</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.error.category_fetching_failed">
+        <source>Fetching categories failed, only the default category will be available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.category">
+        <source>Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+</TS>
