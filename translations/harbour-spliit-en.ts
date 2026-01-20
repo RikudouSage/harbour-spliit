@@ -106,47 +106,68 @@
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="119"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="121"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="global.cancel">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="16"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="20"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="15"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message id="global.add">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="18"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="22"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>
     <message id="add_expense.error.category_fetching_failed">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="32"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="40"/>
         <source>Fetching categories failed, only the default category will be available.</source>
         <translation>Fetching categories failed, only the default category will be available.</translation>
     </message>
     <message id="add_expense.field.name">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="70"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="78"/>
         <source>Title</source>
         <translation>Title</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="75"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="83"/>
         <source>Expense date</source>
         <oldsource>&lt;strong&gt;Expense date&lt;/strong&gt;: %1</oldsource>
         <translation>Expense date</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="90"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="98"/>
         <source>Category</source>
         <translation>Category</translation>
+    </message>
+    <message id="add_expense.field.currency">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="113"/>
+        <source>Currency</source>
+        <translation>Currency</translation>
+    </message>
+    <message id="add_expense.field.amount">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="132"/>
+        <source>Amount (%1)</source>
+        <oldsource>Amount</oldsource>
+        <translation>Amount (%1)</translation>
+    </message>
+    <message id="add_expense.field.amount_no_currency">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="134"/>
+        <source>Amount</source>
+        <translation>Amount</translation>
     </message>
     <message id="category_select.title">
         <location filename="../qml/pages/SelectCategoryDialog.qml" line="15"/>
         <source>Choose a category</source>
         <translation>Choose a category</translation>
+    </message>
+    <message id="currency_select.title">
+        <location filename="../qml/pages/SelectCurrencyDialog.qml" line="15"/>
+        <source>Choose currency</source>
+        <translation>Choose currency</translation>
     </message>
 </context>
 </TS>

@@ -3,12 +3,16 @@ import Sailfish.Silica 1.0
 
 import "../components"
 import "../js/objects.js" as Objects
+import "../js/currencies.js" as Currencies
 
 DefaultDialog {
+    property var currencies: ({})
     property var categories: ({})
+    property var currencyDetail
 
     property var date
     property int categoryId: 0
+    property string currency
 
     id: page
     loading: true
@@ -18,6 +22,10 @@ DefaultDialog {
     acceptText: qsTrId("global.add")
 
     canAccept: name.text !== ""
+
+    onCurrencyChanged: {
+        currencyDetail = currencyInfo.infoForCodes([currency], settings.language)[0];
+    }
 
     Component {
         id: datePickerComponent
@@ -100,8 +108,40 @@ DefaultDialog {
         }
     }
 
+    ValueButton {
+        //% "Currency"
+        label: qsTrId("add_expense.field.currency")
+        value: typeof currencies[currency] !== 'undefined'
+                    ? (currencies[currency].name + ' (' + currency + ')')
+                    : currency;
+
+        onClicked: {
+            const dialog = pageStack.push("SelectCurrencyDialog.qml", {
+                currencies: Currencies.get(settings.language),
+            });
+            dialog.itemSelected.connect(function(code) {
+                currency = code;
+            });
+        }
+    }
+
+    TextField {
+        id: amount
+        label: currencyDetail
+               //% "Amount (%1)"
+               ? qsTrId("add_expense.field.amount").arg(currencyDetail.symbol)
+               //% "Amount"
+               : qsTrId("add_expense.field.amount_no_currency")
+        inputMethodHints: Qt.ImhFormattedNumbersOnly
+    }
+
     Component.onCompleted: {
         date = new Date();
         spliit.getCategories();
+
+        currencies = Currencies.getAsMap(settings.language);
+        if (!currency) {
+            currency = "EUR";
+        }
     }
 }

@@ -112,5 +112,22 @@
         <source>Choose a category</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.field.currency">
+        <source>Currency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="currency_select.title">
+        <source>Choose currency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.amount">
+        <source>Amount (%1)</source>
+        <oldsource>Amount</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.amount_no_currency">
+        <source>Amount</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

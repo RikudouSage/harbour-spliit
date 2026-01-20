@@ -100,7 +100,9 @@ DefaultPage {
             //% "Add expense"
             text: qsTrId("group_detail.add_expense")
             onClicked: {
-                const dialog = pageStack.push("AddExpenseDialog.qml");
+                const dialog = pageStack.push("AddExpenseDialog.qml", {
+                    currency: group.currencyCode || group.currency,
+                });
                 dialog.accepted.connect(function() {
                 });
             }

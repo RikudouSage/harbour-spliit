@@ -13,6 +13,7 @@
 TARGET = harbour-spliit
 
 QT += concurrent
+PKGCONFIG += icu-uc icu-i18n
 GO_LIB_BUILD_DIR = $$PWD/lib
 GO_LIB_INSTALL_DIR = /usr/share/$$TARGET/lib
 
@@ -30,6 +31,7 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-spliit.cpp \
     src/appsettings.cpp \
+    src/currencyinfo.cpp \
     src/spliitapi.cpp
 
 libspliit.path = /usr/share/harbour-spliit/lib
@@ -42,6 +44,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/DefaultPage.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
+    qml/js/currencies.js \
     qml/js/objects.js \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
@@ -51,6 +54,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/pages/ErrorPage.qml \
     qml/components/SafePage.qml \
     qml/pages/SelectCategoryDialog.qml \
+    qml/pages/SelectCurrencyDialog.qml \
     rpm/harbour-spliit.changes.in \
     rpm/harbour-spliit.changes.run.in \
     rpm/harbour-spliit.spec \
@@ -72,5 +76,6 @@ TRANSLATIONS += translations/harbour-spliit-en.ts
 
 HEADERS += \
     src/appsettings.h \
+    src/currencyinfo.h \
     lib/libspliit.h \
     src/spliitapi.h

@@ -14,6 +14,7 @@
 #include <sailfishapp.h>
 
 #include "appsettings.h"
+#include "currencyinfo.h"
 #include "spliitapi.h"
 
 // todo don't hardcode
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     const auto settings = new AppSettings(app.data());
     const auto api = new SpliitApi(app.data());
+    const auto currencyInfo = new CurrencyInfo(app.data());
 
     auto language = settings->rawLanguage();
     if (language.isEmpty()) {
@@ -46,11 +48,12 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     view->rootContext()->setContextProperty("settings", settings);
     view->rootContext()->setContextProperty("spliit", api);
+    view->rootContext()->setContextProperty("currencyInfo", currencyInfo);
 
 #ifdef QT_DEBUG
     view->rootContext()->setContextProperty("isDebug", true);
 #else
-    v->rootContext()->setContextProperty("isDebug", false);
+    view->rootContext()->setContextProperty("isDebug", false);
 #endif
 
     view->setSource(SailfishApp::pathToMainQml());
