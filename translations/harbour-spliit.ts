@@ -183,5 +183,17 @@
         <source>Creating the expense failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="participant.unknown">
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="expense_row.paid_by_for_label">
+        <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="expense_row.balance">
+        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

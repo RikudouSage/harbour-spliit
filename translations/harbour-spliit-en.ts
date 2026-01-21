@@ -237,5 +237,21 @@
         <source>Group Settings</source>
         <translation>Group Settings</translation>
     </message>
+    <message id="participant.unknown">
+        <location filename="../qml/components/ExpenseRow.qml" line="9"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="13"/>
+        <source>Unknown</source>
+        <translation>Unknown</translation>
+    </message>
+    <message id="expense_row.paid_by_for_label">
+        <location filename="../qml/components/ExpenseRow.qml" line="69"/>
+        <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
+        <translation>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</translation>
+    </message>
+    <message id="expense_row.balance">
+        <location filename="../qml/components/ExpenseRow.qml" line="105"/>
+        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</source>
+        <translation>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</translation>
+    </message>
 </context>
 </TS>

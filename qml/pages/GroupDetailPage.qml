@@ -175,7 +175,12 @@ DefaultPage {
     Repeater {
         model: expenses
 
-        ExpenseRow {}
+        ExpenseRow {
+            expense: modelData
+            participants: Arrays.objectify(group.participants, "id")
+            currentParticipantId: settings.currentParticipantId
+            currencyCode: group ? (group.currencyCode || group.currency) : ""
+        }
     }
 
     Component.onCompleted: {
