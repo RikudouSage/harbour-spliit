@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 import "../components"
 import "../js/arrays.js" as Arrays
+import "../js/strings.js" as Strings
 
 DefaultPage {
     readonly property int limit: 40
@@ -183,6 +184,26 @@ DefaultPage {
             groupId: group ? group.id : ''
             onItemDeleted: {
                 visible = false;
+            }
+            onClicked: {
+                // todo fetch detail
+                const dialog = pageStack.push("AddExpenseDialog.qml", {
+                    participants: Arrays.objectify(group.participants, "id"),
+                    //% "Update expense"
+                    acceptText: qsTrId("add_expense.confirm_text"),
+
+                    name: expense.title,
+                    amount: Strings.insertAt(String(expense.originalAmount || expense.amount), ".", -2),
+                    date: new Date(expense.expenseDate),
+                    categoryId: expense.category.id,
+                    currency: expense.originalCurrency || group.currencyCode || group.currency,
+                    paidBy: expense.paidBy.id,
+                    isReimbursement: expense.isReimbursement,
+                    notes: expense.notes || '',
+                    paidFor: expense.paidFor.map(function(item) {
+                        return item.participant;
+                    }),
+                });
             }
         }
     }

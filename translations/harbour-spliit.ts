@@ -205,5 +205,9 @@ Paid for unknown participant</extracomment>
         <source>Failed deleting the item: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.confirm_text">
+        <source>Update expense</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

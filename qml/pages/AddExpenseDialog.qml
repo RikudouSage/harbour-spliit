@@ -20,6 +20,7 @@ DefaultDialog {
     property alias isReimbursement: isReimbursementSwitch.checked
     property alias notes: notesField.text
     property var paidFor: []
+    property var paidForIds: paidFor.map(function(item) {return item.id});
 
     id: page
     loading: true
@@ -187,7 +188,9 @@ DefaultDialog {
 
         TextSwitch {
             text: modelData.name
-            checked: true
+            checked: {
+                return paidForIds.length === 0 || paidForIds.indexOf(modelData.id) > -1
+            }
 
             onCheckedChanged: {
                 if (checked) {
@@ -202,7 +205,9 @@ DefaultDialog {
     }
 
     Component.onCompleted: {
-        date = new Date();
+        if (!date) {
+            date = new Date();
+        }
         spliit.getCategories();
 
         currencies = Currencies.getAsMap(settings.language);
@@ -210,8 +215,10 @@ DefaultDialog {
             currency = "EUR";
         }
 
-        paidFor = Objects.values(participants).map(function(participant) {
-            return participant.id;
-        });
+        if (!paidFor.length) {
+            paidFor = Objects.values(participants).map(function(participant) {
+                return participant.id;
+            });
+        }
     }
 }

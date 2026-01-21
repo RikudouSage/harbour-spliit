@@ -50,6 +50,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/js/arrays.js \
     qml/js/currencies.js \
     qml/js/objects.js \
+    qml/js/strings.js \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
     qml/pages/GroupDetailPage.qml \
