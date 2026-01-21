@@ -29,8 +29,8 @@ ListItem {
 
     id: root
     width: parent ? parent.width : implicitWidth
-    implicitHeight: content.implicitHeight + Theme.paddingMedium
-    contentHeight: implicitHeight
+    contentHeight: content.implicitHeight + Theme.paddingMedium
+
     menu: ContextMenu {
         IconMenuItem {
             //% "Remove"
