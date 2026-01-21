@@ -13,6 +13,7 @@ class AppSettings : public QObject
     Q_PROPERTY(QString rawLanguage READ rawLanguage WRITE setRawLanguage NOTIFY rawLanguageChanged)
     Q_PROPERTY(QString currentGroupId READ currentGroupId WRITE setCurrentGroupId NOTIFY currentGroupIdChanged)
     Q_PROPERTY(QStringList storedGroups READ storedGroups WRITE setStoredGroups NOTIFY storedGroupsChanged)
+    Q_PROPERTY(QString currentParticipantId READ currentParticipantId WRITE setCurrentParticipantId NOTIFY currentParticipantIdChanged)
 public:
     explicit AppSettings(QObject *parent = nullptr);
     ~AppSettings();
@@ -25,12 +26,15 @@ public:
     void setCurrentGroupId(const QString &value);
     const QStringList storedGroups();
     void setStoredGroups(const QStringList &value);
+    const QString currentParticipantId() const;
+    void setCurrentParticipantId(const QString &value);
 
 signals:
     void languageChanged();
     void rawLanguageChanged();
     void currentGroupIdChanged();
     void storedGroupsChanged();
+    void currentParticipantIdChanged();
 
 private:
     void saveConfig(const QString &name, const QVariant &value);
@@ -44,6 +48,7 @@ private:
     QString prop_language;
     QString prop_currentGroupId;
     QStringList prop_storedGroups;
+    QString prop_currentParticipantId;
 };
 
 #endif // APPSETTINGS_H

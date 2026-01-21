@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 import "../components"
+import "../js/arrays.js" as Arrays
 
 DefaultPage {
     readonly property int limit: 40
@@ -27,6 +28,7 @@ DefaultPage {
 
     id: page
     title: typeof group === 'undefined' ? '' : group.name
+    loading: true
 
     VerticalScrollDecorator {}
 
@@ -47,8 +49,7 @@ DefaultPage {
             loading = false;
         }
 
-        onGroupFetched:     {
-            loading = false;
+        onGroupFetched: {
             if (response.group === null) {
                 //% "The group does not exist."
                 errorLabel.text = qsTrId("add_group.error.not_found");
@@ -62,10 +63,10 @@ DefaultPage {
         onExpenseListFailed: {
             //% "Failed fetching more expenses from the api"
             errorLabel.text = qsTrId("add_group.error.fetch_more");
+            loading = false;
         }
 
         onExpenseListResult: {
-            loading = false;
             if (response.expenses === null) {
                 //% "Failed fetching more expenses from the api"
                 errorLabel.text = qsTrId("add_group.error.fetch_more");
@@ -82,7 +83,7 @@ DefaultPage {
                 expenses.push(expense);
             }
             page.expenses = expenses;
-            console.log(JSON.stringify(expenses));
+            loading = false;
         }
     }
 
@@ -97,11 +98,27 @@ DefaultPage {
         }
 
         MenuItem {
+            //% "Settings"
+            text: qsTrId("global.settings")
+            onClicked: {
+                const dialog = pageStack.push("SettingsDialog.qml", {
+                    group: group,
+                });
+                dialog.accepted.connect(function() {
+                    settings.rawLanguage = dialog.language;
+                    settings.currentParticipantId = dialog.participant;
+                });
+            }
+        }
+
+        MenuItem {
             //% "Add expense"
             text: qsTrId("group_detail.add_expense")
             onClicked: {
                 const dialog = pageStack.push("AddExpenseDialog.qml", {
                     currency: group.currencyCode || group.currency,
+                    participants: Arrays.objectify(group.participants, "id"),
+                    paidBy: settings.currentParticipantId,
                 });
                 dialog.accepted.connect(function() {
                 });

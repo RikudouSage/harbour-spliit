@@ -116,6 +116,7 @@ DefaultPage {
 
             onClicked: {
                 settings.currentGroupId = item;
+                settings.currentParticipantId = "";
                 if (pageStack.depth === 1) {
                     pageStack.replace("GroupDetailPage.qml")
                 } else {

@@ -7,6 +7,7 @@ AppSettings::AppSettings(QObject *parent) : QObject(parent)
     prop_language = settings->value("language", "").toString();
     prop_currentGroupId = settings->value("currentGroupId", "").toString();
     prop_storedGroups = settings->value("storedGroups").toStringList();
+    prop_currentParticipantId = settings->value("currentParticipantId", "").toString();
 }
 
 AppSettings::~AppSettings() {
@@ -77,4 +78,21 @@ void AppSettings::setStoredGroups(const QStringList &value)
     prop_storedGroups = value;
 
     emit storedGroupsChanged();
+}
+
+const QString AppSettings::currentParticipantId() const
+{
+    return prop_currentParticipantId;
+}
+
+void AppSettings::setCurrentParticipantId(const QString &value)
+{
+    if (value == prop_currentParticipantId) {
+        return;
+    }
+
+    settings->setValue("currentParticipantId", value);
+    prop_currentParticipantId = value;
+
+    emit currentParticipantIdChanged();
 }

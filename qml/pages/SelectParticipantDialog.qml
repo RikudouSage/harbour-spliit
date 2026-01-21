@@ -4,15 +4,15 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-    property alias categories: listView.model
-    signal itemSelected(int id)
+    property alias participants: listView.model
+    signal itemSelected(string id)
 
     SilicaListView {
         id: listView
         anchors.fill: parent
         header: PageHeader {
-            //% "Choose a category"
-            title: qsTrId("category_select.title")
+            //% "Choose a participant"
+            title: qsTrId("participant_select.title")
         }
 
         VerticalScrollDecorator {}

@@ -8,11 +8,13 @@ import "../js/currencies.js" as Currencies
 DefaultDialog {
     property var currencies: ({})
     property var categories: ({})
+    property var participants: ({})
     property var currencyDetail
 
     property var date
     property int categoryId: 0
     property string currency
+    property string paidBy
 
     id: page
     loading: true
@@ -21,7 +23,7 @@ DefaultDialog {
     //% "Add"
     acceptText: qsTrId("global.add")
 
-    canAccept: name.text !== ""
+    canAccept: name.isValid && amount.isValid && paidBy
 
     onCurrencyChanged: {
         currencyDetail = currencyInfo.infoForCodes([currency], settings.language)[0];
@@ -73,6 +75,8 @@ DefaultDialog {
     }
 
     TextField {
+        readonly property bool isValid: text != ""
+
         id: name
         //% "Title"
         label: qsTrId("add_expense.field.name")
@@ -126,6 +130,8 @@ DefaultDialog {
     }
 
     TextField {
+        readonly property bool isValid: text != "" && (Number(text) > 0 || Number(text) < 0)
+
         id: amount
         label: currencyDetail
                //% "Amount (%1)"
@@ -133,6 +139,23 @@ DefaultDialog {
                //% "Amount"
                : qsTrId("add_expense.field.amount_no_currency")
         inputMethodHints: Qt.ImhFormattedNumbersOnly
+    }
+
+    ValueButton {
+        //% "Paid by"
+        label: qsTrId("add_expense.field.paid_by")
+        value: paidBy && typeof participants[paidBy] !== 'undefined'
+               ? participants[paidBy].name
+               : ''
+
+        onClicked: {
+            const dialog = pageStack.push("SelectParticipantDialog.qml", {
+                participants: Objects.values(participants),
+            });
+            dialog.itemSelected.connect(function(id) {
+                paidBy = id;
+            });
+        }
     }
 
     Component.onCompleted: {

@@ -44,6 +44,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/DefaultPage.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
+    qml/js/arrays.js \
     qml/js/currencies.js \
     qml/js/objects.js \
     qml/pages/AddExpenseDialog.qml \
@@ -55,6 +56,8 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/SafePage.qml \
     qml/pages/SelectCategoryDialog.qml \
     qml/pages/SelectCurrencyDialog.qml \
+    qml/pages/SelectParticipantDialog.qml \
+    qml/pages/SettingsDialog.qml \
     rpm/harbour-spliit.changes.in \
     rpm/harbour-spliit.changes.run.in \
     rpm/harbour-spliit.spec \

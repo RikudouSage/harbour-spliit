@@ -50,114 +50,126 @@
         <translation>Saved Groups</translation>
     </message>
     <message id="global.remove">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="131"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="132"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
     <message id="add_group.error.generic">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="23"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="46"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="48"/>
         <source>There was an error: %1</source>
         <translation>There was an error: %1</translation>
     </message>
     <message id="add_group.error.not_found">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="31"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="54"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="55"/>
         <source>The group does not exist.</source>
         <translation>The group does not exist.</translation>
     </message>
     <message id="add_group.help_text">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="51"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="49"/>
         <source>Please provide the group ID below.</source>
         <translation>Please provide the group ID below.</translation>
     </message>
     <message id="add_group.group_id_field.label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="57"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="55"/>
         <source>Group ID</source>
         <translation>Group ID</translation>
     </message>
     <message id="add_group.group_name_label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="82"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="80"/>
         <source>Group name: %1</source>
         <translation>Group name: %1</translation>
     </message>
     <message id="global.loading">
         <location filename="../qml/components/DefaultDialog.qml" line="9"/>
         <location filename="../qml/components/DefaultPage.qml" line="8"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="93"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="91"/>
         <location filename="../qml/pages/InitialPage.qml" line="13"/>
         <source>Loading...</source>
         <translation>Loading...</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="64"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="71"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="65"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="72"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="93"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="94"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
+    <message id="global.settings">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="102"/>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="101"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="116"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="121"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="138"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="global.cancel">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="20"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="15"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="22"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="17"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message id="global.add">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="22"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="24"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="11"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>
     <message id="add_expense.error.category_fetching_failed">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="40"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="42"/>
         <source>Fetching categories failed, only the default category will be available.</source>
         <translation>Fetching categories failed, only the default category will be available.</translation>
     </message>
     <message id="add_expense.field.name">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="78"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="82"/>
         <source>Title</source>
         <translation>Title</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="83"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="87"/>
         <source>Expense date</source>
         <oldsource>&lt;strong&gt;Expense date&lt;/strong&gt;: %1</oldsource>
         <translation>Expense date</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="98"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="102"/>
         <source>Category</source>
         <translation>Category</translation>
     </message>
     <message id="add_expense.field.currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="113"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="117"/>
         <source>Currency</source>
         <translation>Currency</translation>
     </message>
     <message id="add_expense.field.amount">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="132"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="138"/>
         <source>Amount (%1)</source>
         <oldsource>Amount</oldsource>
         <translation>Amount (%1)</translation>
     </message>
     <message id="add_expense.field.amount_no_currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="134"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="140"/>
         <source>Amount</source>
         <translation>Amount</translation>
+    </message>
+    <message id="add_expense.field.paid_by">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="146"/>
+        <source>Paid by</source>
+        <oldsource>Paid By</oldsource>
+        <translation>Paid by</translation>
     </message>
     <message id="category_select.title">
         <location filename="../qml/pages/SelectCategoryDialog.qml" line="15"/>
@@ -168,6 +180,42 @@
         <location filename="../qml/pages/SelectCurrencyDialog.qml" line="15"/>
         <source>Choose currency</source>
         <translation>Choose currency</translation>
+    </message>
+    <message id="participant_select.title">
+        <location filename="../qml/pages/SelectParticipantDialog.qml" line="15"/>
+        <source>Choose a participant</source>
+        <translation>Choose a participant</translation>
+    </message>
+    <message id="global.save">
+        <location filename="../qml/pages/SettingsDialog.qml" line="15"/>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message id="settings.section.app">
+        <location filename="../qml/pages/SettingsDialog.qml" line="24"/>
+        <source>App Settings</source>
+        <translation>App Settings</translation>
+    </message>
+    <message id="settings.language.auto">
+        <location filename="../qml/pages/SettingsDialog.qml" line="34"/>
+        <source>Automatic</source>
+        <extracomment>As in automatic language selection</extracomment>
+        <translation>Automatic</translation>
+    </message>
+    <message id="settings.language.label">
+        <location filename="../qml/pages/SettingsDialog.qml" line="41"/>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message id="settings.current_participant">
+        <location filename="../qml/pages/SettingsDialog.qml" line="67"/>
+        <source>Active user</source>
+        <translation>Active user</translation>
+    </message>
+    <message id="settings.section.group">
+        <location filename="../qml/pages/SettingsDialog.qml" line="86"/>
+        <source>Group Settings</source>
+        <translation>Group Settings</translation>
     </message>
 </context>
 </TS>

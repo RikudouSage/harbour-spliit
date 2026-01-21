@@ -129,5 +129,43 @@
         <source>Amount</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.field.paid_by">
+        <source>Paid by</source>
+        <oldsource>Paid By</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="participant_select.title">
+        <source>Choose a participant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.save">
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.section.app">
+        <source>App Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.language.auto">
+        <source>Automatic</source>
+        <extracomment>As in automatic language selection</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.language.label">
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.section.group">
+        <source>Group Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.settings">
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.current_participant">
+        <source>Active user</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
