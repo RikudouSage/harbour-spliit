@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Item {
+ListItem {
     property var expense
     readonly property bool reimbursement: expense.isReimbursement
     readonly property string paidByName: expense.paidBy === null
@@ -24,10 +24,45 @@ Item {
     property string balance: currencyInfo.formatCurrency(balanceRaw, currencyCode, settings.language)
     property string balanceCalcLeft: '0'
     property string balanceCalcRight: '0'
+    property string groupId
+    signal itemDeleted();
 
     id: root
     width: parent ? parent.width : implicitWidth
     implicitHeight: content.implicitHeight + Theme.paddingMedium
+    contentHeight: implicitHeight
+    menu: ContextMenu {
+        IconMenuItem {
+            //% "Remove"
+            text: qsTrId("global.remove")
+            icon.source: "image://theme/icon-m-remove"
+
+            onClicked: {
+                remorseDelete(function() {
+                    spliit.deleteExpense(groupId, expense.id, currentParticipantId);
+                });
+            }
+        }
+    }
+
+    Connections {
+        target: spliit
+
+        onExpenseDeleted: {
+            if (id !== expense.id) {
+                return;
+            }
+            itemDeleted();
+        }
+
+        onExpenseDeleteFailed: {
+            if (id !== expense.id) {
+                return;
+            }
+            //% "Failed deleting the item: %1"
+            notificationStack.push(qsTrId("expense_row.error.delete").arg(error), true);
+        }
+    }
 
     Column {
         id: content

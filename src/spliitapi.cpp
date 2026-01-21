@@ -99,11 +99,32 @@ void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request
     runRequest(
         "groups.expenses.create",
         input,
-        "Invalid JSON when creating response",
+        "Invalid JSON when creating expense",
         [this](const QJsonObject &response) {
             emit expenseCreated(response.value("expenseId").toString());
         },
         [this](const QString &error) {emit expenseCreationFailed(error);}
+    );
+}
+
+void SpliitApi::deleteExpense(const QString &groupId, const QString &expenseId, const QString &participantId)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    input.insert("expenseId", expenseId);
+    if (participantId != "") {
+        input.insert("participantId", participantId);
+    }
+
+    runRequest(
+        "groups.expenses.delete",
+        input,
+        "Invalid JSON when deleting expense",
+        [this, expenseId](const QJsonObject &response) {
+            Q_UNUSED(response);
+            emit expenseDeleted(expenseId);
+        },
+        [this, expenseId](const QString &error) {emit expenseDeleteFailed(expenseId, error);}
     );
 }
 

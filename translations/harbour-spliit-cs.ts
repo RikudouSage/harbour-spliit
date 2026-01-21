@@ -20,13 +20,18 @@
 Paid for unknown participant</extracomment>
         <translation>Neznámý</translation>
     </message>
+    <message id="expense_row.error.delete">
+        <location filename="../qml/components/ExpenseRow.qml" line="64"/>
+        <source>Failed deleting the item: %1</source>
+        <translation>Nezdařilo se smazat položku: %1</translation>
+    </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="73"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="109"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Zaplatil/a &lt;strong&gt;%1&lt;/strong&gt; za &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="110"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="146"/>
         <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
         <translation>Váš zůstatek: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</translation>
@@ -195,6 +200,7 @@ Paid for unknown participant</extracomment>
         <translation>Uložené skupiny</translation>
     </message>
     <message id="global.remove">
+        <location filename="../qml/components/ExpenseRow.qml" line="37"/>
         <location filename="../qml/pages/GroupSelectorPage.qml" line="132"/>
         <source>Remove</source>
         <translation>Odstranit</translation>

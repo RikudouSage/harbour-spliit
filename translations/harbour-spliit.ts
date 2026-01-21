@@ -201,5 +201,9 @@ Paid for unknown participant</extracomment>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message id="expense_row.error.delete">
+        <source>Failed deleting the item: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

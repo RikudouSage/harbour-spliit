@@ -181,6 +181,10 @@ DefaultPage {
             participants: group ? Arrays.objectify(group.participants, "id") : {}
             currentParticipantId: settings.currentParticipantId
             currencyCode: group ? (group.currencyCode || group.currency) : ""
+            groupId: group ? group.id : ''
+            onItemDeleted: {
+                visible = false;
+            }
         }
     }
 
