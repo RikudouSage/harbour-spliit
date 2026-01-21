@@ -93,6 +93,7 @@
     </message>
     <message id="add_expense.field.name">
         <source>Title</source>
+        <extracomment>Title of the expense</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="add_expense.field.date">
@@ -185,6 +186,9 @@
     </message>
     <message id="participant.unknown">
         <source>Unknown</source>
+        <extracomment>Paid by unknown participant
+----------
+Paid for unknown participant</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="expense_row.paid_by_for_label">

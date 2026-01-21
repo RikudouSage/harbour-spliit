@@ -20,6 +20,11 @@ const QString AppSettings::language() const
         return prop_language;
     }
 
+    const auto lang = QLocale::system().language();
+    if (lang == QLocale::C) {
+        return QStringLiteral("en");
+    }
+
     return QLocale::languageToString(QLocale::system().language()).toLower();
 }
 

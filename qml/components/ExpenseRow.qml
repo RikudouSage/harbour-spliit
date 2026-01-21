@@ -5,10 +5,12 @@ Item {
     property var expense
     readonly property bool reimbursement: expense.isReimbursement
     readonly property string paidByName: expense.paidBy === null
+        //: Paid by unknown participant
         //% "Unknown"
         ? qsTrId("participant.unknown")
         : expense.paidBy.name
     readonly property string paidForNames: expense.paidFor === null
+        //: Paid for unknown participant
         //% "Unknown"
         ? qsTrId("participant.unknown")
         : expense.paidFor.map(function(item) {

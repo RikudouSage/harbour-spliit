@@ -139,55 +139,56 @@
         <translation>Fetching categories failed, only the default category will be available.</translation>
     </message>
     <message id="add_expense.field.name">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="87"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="88"/>
         <source>Title</source>
+        <extracomment>Title of the expense</extracomment>
         <translation>Title</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="92"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="93"/>
         <source>Expense date</source>
         <oldsource>&lt;strong&gt;Expense date&lt;/strong&gt;: %1</oldsource>
         <translation>Expense date</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="107"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="108"/>
         <source>Category</source>
         <translation>Category</translation>
     </message>
     <message id="add_expense.field.currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="122"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="123"/>
         <source>Currency</source>
         <translation>Currency</translation>
     </message>
     <message id="add_expense.field.amount">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="143"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="144"/>
         <source>Amount (%1)</source>
         <oldsource>Amount</oldsource>
         <translation>Amount (%1)</translation>
     </message>
     <message id="add_expense.field.amount_no_currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="145"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="146"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message id="add_expense.field.is_reimbursement">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="152"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="153"/>
         <source>This is a reimbursement</source>
         <translation>This is a reimbursement</translation>
     </message>
     <message id="add_expense.field.paid_by">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="157"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="158"/>
         <source>Paid by</source>
         <oldsource>Paid By</oldsource>
         <translation>Paid by</translation>
     </message>
     <message id="add_expense.field.notes">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="175"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="176"/>
         <source>Notes</source>
         <translation>Notes</translation>
     </message>
     <message id="add_expense.label.paid_for">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="181"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="182"/>
         <source>Paid for</source>
         <translation>Paid for</translation>
     </message>
@@ -223,33 +224,36 @@
         <translation>Automatic</translation>
     </message>
     <message id="settings.language.label">
-        <location filename="../qml/pages/SettingsDialog.qml" line="41"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="42"/>
         <source>Language</source>
         <translation>Language</translation>
     </message>
     <message id="settings.current_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="67"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="68"/>
         <source>Active user</source>
         <translation>Active user</translation>
     </message>
     <message id="settings.section.group">
-        <location filename="../qml/pages/SettingsDialog.qml" line="86"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="87"/>
         <source>Group Settings</source>
         <translation>Group Settings</translation>
     </message>
     <message id="participant.unknown">
-        <location filename="../qml/components/ExpenseRow.qml" line="9"/>
-        <location filename="../qml/components/ExpenseRow.qml" line="13"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="10"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="15"/>
         <source>Unknown</source>
+        <extracomment>Paid by unknown participant
+----------
+Paid for unknown participant</extracomment>
         <translation>Unknown</translation>
     </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="71"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="73"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="108"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="110"/>
         <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
         <oldsource>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</oldsource>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>

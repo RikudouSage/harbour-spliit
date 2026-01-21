@@ -33,6 +33,7 @@ DefaultDialog {
                         //% "Automatic"
                         {text: qsTrId("settings.language.auto"), value: ""},
                         {text: "English", value: "en"},
+                        {text: "Čeština", value: "cs"},
                     ]
 
                     id: langSelect

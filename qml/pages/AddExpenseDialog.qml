@@ -83,6 +83,7 @@ DefaultDialog {
         readonly property bool isValid: text != ""
 
         id: nameField
+        //: Title of the expense
         //% "Title"
         label: qsTrId("add_expense.field.name")
     }

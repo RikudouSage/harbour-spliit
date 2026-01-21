@@ -2,6 +2,7 @@
 
 #include <QVariantMap>
 #include <QVector>
+#include <QDebug>
 
 #include <unicode/ucurr.h>
 #include <unicode/uenum.h>
@@ -14,8 +15,10 @@ QString toIcuLocale(const QString &languageTag)
     if (languageTag.isEmpty()) {
         return QStringLiteral("en");
     }
+
     QString locale = languageTag;
     locale.replace('-', '_');
+
     return locale;
 }
 
