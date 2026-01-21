@@ -147,3 +147,50 @@ QString CurrencyInfo::formatCurrency(double amount, const QString &currencyCode,
     unum_close(format);
     return result;
 }
+
+QString CurrencyInfo::formatNumber(double amount, const QString &languageTag) const
+{
+    const QString locale = toIcuLocale(languageTag);
+
+    UErrorCode status = U_ZERO_ERROR;
+    UNumberFormat *format = unum_open(UNUM_CURRENCY, nullptr, 0,
+                                      locale.toUtf8().constData(), nullptr, &status);
+    if (U_FAILURE(status) || !format) {
+        return QString();
+    }
+
+    const UChar empty[1] = {0};
+    status = U_ZERO_ERROR;
+    unum_setSymbol(format, UNUM_CURRENCY_SYMBOL, empty, 0, &status);
+    if (U_FAILURE(status)) {
+        unum_close(format);
+        return QString();
+    }
+
+    status = U_ZERO_ERROR;
+    unum_setSymbol(format, UNUM_INTL_CURRENCY_SYMBOL, empty, 0, &status);
+    if (U_FAILURE(status)) {
+        unum_close(format);
+        return QString();
+    }
+
+    UChar stackBuffer[64] = {0};
+    status = U_ZERO_ERROR;
+    int32_t length = unum_formatDouble(format, amount, stackBuffer,
+                                       sizeof(stackBuffer) / sizeof(UChar), nullptr, &status);
+    QString result;
+    if (status == U_BUFFER_OVERFLOW_ERROR) {
+        status = U_ZERO_ERROR;
+        QVector<UChar> heapBuffer(length + 1);
+        length = unum_formatDouble(format, amount, heapBuffer.data(),
+                                   heapBuffer.size(), nullptr, &status);
+        if (U_SUCCESS(status)) {
+            result = uCharToQString(heapBuffer.data(), length);
+        }
+    } else if (U_SUCCESS(status)) {
+        result = uCharToQString(stackBuffer, length);
+    }
+
+    unum_close(format);
+    return result.trimmed();
+}

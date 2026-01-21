@@ -192,7 +192,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="expense_row.balance">
-        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</source>
+        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
+        <oldsource>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</oldsource>
+        <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

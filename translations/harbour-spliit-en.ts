@@ -95,28 +95,28 @@
         <translation>Creating the expense failed: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="76"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="83"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="77"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="84"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="105"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="106"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="114"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="115"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="129"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="130"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="172"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="173"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
@@ -244,14 +244,16 @@
         <translation>Unknown</translation>
     </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="69"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="71"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="105"/>
-        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</source>
-        <translation>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</translation>
+        <location filename="../qml/components/ExpenseRow.qml" line="108"/>
+        <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
+        <oldsource>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</oldsource>
+        <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
+        <translation>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</translation>
     </message>
 </context>
 </TS>

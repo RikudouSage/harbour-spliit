@@ -20,6 +20,8 @@ Item {
     property string currentParticipantId: ""
     property string currencyCode: ""
     property string balance: currencyInfo.formatCurrency(balanceRaw, currencyCode, settings.language)
+    property string balanceCalcLeft: '0'
+    property string balanceCalcRight: '0'
 
     id: root
     width: parent ? parent.width : implicitWidth
@@ -80,8 +82,8 @@ Item {
                     right: parent.right
                     top: parent.top
                 }
-                // todo format using intl
                 text: currencyInfo.formatCurrency(expense.amount / 100, currencyCode, settings.language)
+                    || (currencyInfo.formatNumber(expense.amount / 100, settings.language) + ' ' + currencyCode)
                 font.pixelSize: Theme.fontSizeMedium
                 font.bold: true
                 font.italic: reimbursement
@@ -101,14 +103,18 @@ Item {
                     right: dateLabel.left
                     rightMargin: Theme.paddingLarge
                 }
-                //% "Your balance: <strong>%1</strong>"
-                text: qsTrId("expense_row.balance").arg(balance)
+                //: Your balance: <strong>€ 2.00</strong> (€3.00 - €1.00)
+                //% "Your balance: <strong>%1</strong> (%2 - %3)"
+                text: qsTrId("expense_row.balance")
+                        .arg(balance)
+                        .arg(balanceCalcLeft)
+                        .arg(balanceCalcRight)
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
                 font.italic: reimbursement
                 color: balanceRaw >= 0 ? Theme.highlightColor : Theme.errorColor
-                visible: settings.currentParticipantId !== ""
+                visible: currentParticipantId !== "" && balance !== ""
             }
 
             Label {
@@ -125,11 +131,36 @@ Item {
         }
     }
 
-    Component.onCompleted: {
-        if (expense.paidBy.id === settings.currentParticipantId) {
-            balanceRaw = (expense.amount / 100) - (expense.amount / 100 / expense.paidFor.length);
-        } else {
-            balanceRaw = -(expense.amount / 100 / expense.paidFor.length);
+    onCurrentParticipantIdChanged: {
+        if (currentParticipantId) {
+            const paidByMe = expense.paidBy.id === currentParticipantId;
+
+            const paidByMeLeft = expense.amount / 100;
+            const paidByMeRight = expense.amount / 100 / expense.paidFor.length;
+            const notPaidByMeleft = expense.amount / 100;
+            const notPaidByMeRight = (expense.amount / 100 / expense.paidFor.length) * (expense.paidFor.length - 1);
+
+            if (paidByMe) {
+                balanceRaw = (expense.amount / 100) - (expense.amount / 100 / expense.paidFor.length);
+                balanceCalcLeft = currencyInfo.formatCurrency(paidByMeLeft, currencyCode, settings.language);
+                balanceCalcRight = currencyInfo.formatCurrency(paidByMeRight, currencyCode, settings.language);
+            } else {
+                balanceRaw = -(expense.amount / 100 / expense.paidFor.length);
+                balanceCalcLeft = currencyInfo.formatCurrency(notPaidByMeleft, currencyCode, settings.language);
+                balanceCalcRight = currencyInfo.formatCurrency(notPaidByMeRight, currencyCode, settings.language);
+            }
+
+            // custom currencies
+            if (balance === "") {
+                balance = currencyInfo.formatNumber(balanceRaw, settings.language) + " " + currencyCode;
+                if (paidByMe) {
+                    balanceCalcLeft = currencyInfo.formatNumber(paidByMeLeft, settings.language) + " " + currencyCode;
+                    balanceCalcRight = currencyInfo.formatNumber(paidByMeRight, settings.language) + " " + currencyCode;
+                } else {
+                    balanceCalcLeft = currencyInfo.formatNumber(notPaidByMeleft, settings.language) + " " + currencyCode;
+                    balanceCalcRight = currencyInfo.formatNumber(notPaidByMeRight, settings.language) + " " + currencyCode;
+                }
+            }
         }
     }
 }

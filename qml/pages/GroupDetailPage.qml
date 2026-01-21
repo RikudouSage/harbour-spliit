@@ -68,6 +68,7 @@ DefaultPage {
             }
 
             group = response.group;
+            console.log(JSON.stringify(group))
             fetchMore();
         }
 
@@ -177,7 +178,7 @@ DefaultPage {
 
         ExpenseRow {
             expense: modelData
-            participants: Arrays.objectify(group.participants, "id")
+            participants: group ? Arrays.objectify(group.participants, "id") : {}
             currentParticipantId: settings.currentParticipantId
             currencyCode: group ? (group.currencyCode || group.currency) : ""
         }
