@@ -172,6 +172,12 @@ DefaultPage {
         text: qsTrId("group_detail.no_expenses")
     }
 
+    Repeater {
+        model: expenses
+
+        ExpenseRow {}
+    }
+
     Component.onCompleted: {
         fetchGroup();
     }

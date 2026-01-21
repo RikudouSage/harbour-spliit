@@ -42,6 +42,7 @@ INSTALLS += libspliit
 DISTFILES += qml/harbour-spliit.qml \
     qml/components/DefaultDialog.qml \
     qml/components/DefaultPage.qml \
+    qml/components/ExpenseRow.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
     qml/js/arrays.js \
