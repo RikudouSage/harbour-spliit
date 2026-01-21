@@ -167,5 +167,21 @@
         <source>Active user</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.field.is_reimbursement">
+        <source>This is a reimbursement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.field.notes">
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.label.paid_for">
+        <source>Paid for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.create_failed">
+        <source>Creating the expense failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

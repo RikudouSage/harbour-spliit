@@ -86,6 +86,27 @@ void SpliitApi::getCategories()
     );
 }
 
+void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request, const QString &participantId)
+{
+    auto form = QJsonObject::fromVariantMap(request);
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    input.insert("expenseFormValues", form);
+    if (participantId != "") {
+        input.insert("participantId", participantId);
+    }
+
+    runRequest(
+        "groups.expenses.create",
+        input,
+        "Invalid JSON when creating response",
+        [this](const QJsonObject &response) {
+            emit expenseCreated(response.value("expenseId").toString());
+        },
+        [this](const QString &error) {emit expenseCreationFailed(error);}
+    );
+}
+
 void SpliitApi::runRequest(
     const QString &endpoint,
     const QJsonObject &input,

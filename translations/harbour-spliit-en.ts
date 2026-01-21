@@ -56,13 +56,13 @@
     </message>
     <message id="add_group.error.generic">
         <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="48"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="59"/>
         <source>There was an error: %1</source>
         <translation>There was an error: %1</translation>
     </message>
     <message id="add_group.error.not_found">
         <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="55"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="66"/>
         <source>The group does not exist.</source>
         <translation>The group does not exist.</translation>
     </message>
@@ -89,87 +89,107 @@
         <source>Loading...</source>
         <translation>Loading...</translation>
     </message>
+    <message id="group_detail.create_failed">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="54"/>
+        <source>Creating the expense failed: %1</source>
+        <translation>Creating the expense failed: %1</translation>
+    </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="65"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="72"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="76"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="83"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="94"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="105"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="102"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="114"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="116"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="129"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="138"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="172"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="global.cancel">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="22"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="27"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="17"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message id="global.add">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="24"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="29"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="11"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>
     <message id="add_expense.error.category_fetching_failed">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="42"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="47"/>
         <source>Fetching categories failed, only the default category will be available.</source>
         <translation>Fetching categories failed, only the default category will be available.</translation>
     </message>
     <message id="add_expense.field.name">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="82"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="87"/>
         <source>Title</source>
         <translation>Title</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="87"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="92"/>
         <source>Expense date</source>
         <oldsource>&lt;strong&gt;Expense date&lt;/strong&gt;: %1</oldsource>
         <translation>Expense date</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="102"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="107"/>
         <source>Category</source>
         <translation>Category</translation>
     </message>
     <message id="add_expense.field.currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="117"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="122"/>
         <source>Currency</source>
         <translation>Currency</translation>
     </message>
     <message id="add_expense.field.amount">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="138"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="143"/>
         <source>Amount (%1)</source>
         <oldsource>Amount</oldsource>
         <translation>Amount (%1)</translation>
     </message>
     <message id="add_expense.field.amount_no_currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="140"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="145"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
+    <message id="add_expense.field.is_reimbursement">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="152"/>
+        <source>This is a reimbursement</source>
+        <translation>This is a reimbursement</translation>
+    </message>
     <message id="add_expense.field.paid_by">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="146"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="157"/>
         <source>Paid by</source>
         <oldsource>Paid By</oldsource>
         <translation>Paid by</translation>
+    </message>
+    <message id="add_expense.field.notes">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="175"/>
+        <source>Notes</source>
+        <translation>Notes</translation>
+    </message>
+    <message id="add_expense.label.paid_for">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="181"/>
+        <source>Paid for</source>
+        <translation>Paid for</translation>
     </message>
     <message id="category_select.title">
         <location filename="../qml/pages/SelectCategoryDialog.qml" line="15"/>

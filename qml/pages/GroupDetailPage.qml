@@ -43,6 +43,17 @@ DefaultPage {
     Connections {
         target: spliit
 
+        onExpenseCreated: {
+            expenses = [];
+            fetchMore();
+        }
+
+        onExpenseCreationFailed: {
+            loading = false;
+            //% "Creating the expense failed: %1"
+            errorLabel.text = qsTrId("group_detail.create_failed").arg(error);
+        }
+
         onGroupFetchFailed: {
             //% "There was an error: %1"
             errorLabel.text = qsTrId("add_group.error.generic").arg(error);
@@ -93,6 +104,7 @@ DefaultPage {
             //% "Change group"
             text: qsTrId("group_detail.change_group")
             onClicked: {
+                errorLabel.text = "";
                 pageStack.push("GroupSelectorPage.qml");
             }
         }
@@ -101,6 +113,7 @@ DefaultPage {
             //% "Settings"
             text: qsTrId("global.settings")
             onClicked: {
+                errorLabel.text = "";
                 const dialog = pageStack.push("SettingsDialog.qml", {
                     group: group,
                 });
@@ -115,12 +128,33 @@ DefaultPage {
             //% "Add expense"
             text: qsTrId("group_detail.add_expense")
             onClicked: {
+                errorLabel.text = "";
                 const dialog = pageStack.push("AddExpenseDialog.qml", {
                     currency: group.currencyCode || group.currency,
                     participants: Arrays.objectify(group.participants, "id"),
                     paidBy: settings.currentParticipantId,
                 });
                 dialog.accepted.connect(function() {
+                    loading = true;
+                    const form = {
+                        expenseDate: dialog.date.toISOString(),
+                        title: dialog.name,
+                        category: dialog.categoryId,
+                        amount: Number(String(dialog.amount) + "00"),
+                        paidBy: dialog.paidBy,
+                        paidFor: dialog.paidFor.map(function(id) {
+                            return {
+                                participant: id,
+                                shares: 100,
+                            };
+                        }),
+                        splitMode: "EVENLY",
+                        isReimbursement: dialog.isReimbursement,
+                        notes: dialog.notes,
+                        recurrenceRule: "NONE",
+                    };
+
+                    spliit.createExpense(group.id, form, settings.currentParticipantId);
                 });
             }
         }

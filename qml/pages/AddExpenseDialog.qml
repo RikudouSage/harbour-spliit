@@ -11,10 +11,15 @@ DefaultDialog {
     property var participants: ({})
     property var currencyDetail
 
+    property alias name: nameField.text
+    property alias amount: amountField.text
     property var date
     property int categoryId: 0
     property string currency
     property string paidBy
+    property alias isReimbursement: isReimbursementSwitch.checked
+    property alias notes: notesField.text
+    property var paidFor: []
 
     id: page
     loading: true
@@ -23,7 +28,7 @@ DefaultDialog {
     //% "Add"
     acceptText: qsTrId("global.add")
 
-    canAccept: name.isValid && amount.isValid && paidBy
+    canAccept: nameField.isValid && amountField.isValid && paidBy && paidFor.length > 0
 
     onCurrencyChanged: {
         currencyDetail = currencyInfo.infoForCodes([currency], settings.language)[0];
@@ -77,7 +82,7 @@ DefaultDialog {
     TextField {
         readonly property bool isValid: text != ""
 
-        id: name
+        id: nameField
         //% "Title"
         label: qsTrId("add_expense.field.name")
     }
@@ -132,13 +137,19 @@ DefaultDialog {
     TextField {
         readonly property bool isValid: text != "" && (Number(text) > 0 || Number(text) < 0)
 
-        id: amount
+        id: amountField
         label: currencyDetail
                //% "Amount (%1)"
                ? qsTrId("add_expense.field.amount").arg(currencyDetail.symbol)
                //% "Amount"
                : qsTrId("add_expense.field.amount_no_currency")
         inputMethodHints: Qt.ImhFormattedNumbersOnly
+    }
+
+    TextSwitch {
+        id: isReimbursementSwitch
+        //% "This is a reimbursement"
+        text: qsTrId("add_expense.field.is_reimbursement")
     }
 
     ValueButton {
@@ -158,6 +169,37 @@ DefaultDialog {
         }
     }
 
+    TextArea {
+        id: notesField
+        //% "Notes"
+        label: qsTrId("add_expense.field.notes")
+    }
+
+    StandardLabel {
+        font.pixelSize: Theme.fontSizeLarge
+        //% "Paid for"
+        text: qsTrId("add_expense.label.paid_for")
+    }
+
+    Repeater {
+        model: Objects.values(participants)
+
+        TextSwitch {
+            text: modelData.name
+            checked: true
+
+            onCheckedChanged: {
+                if (checked) {
+                    paidFor.push(modelData.id);
+                } else {
+                    paidFor = paidFor.filter(function(id) {
+                        return id !== modelData.id;
+                    });
+                }
+            }
+        }
+    }
+
     Component.onCompleted: {
         date = new Date();
         spliit.getCategories();
@@ -166,5 +208,9 @@ DefaultDialog {
         if (!currency) {
             currency = "EUR";
         }
+
+        paidFor = Objects.values(participants).map(function(participant) {
+            return participant.id;
+        });
     }
 }
