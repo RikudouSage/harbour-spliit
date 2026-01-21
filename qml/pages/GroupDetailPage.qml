@@ -68,7 +68,6 @@ DefaultPage {
             }
 
             group = response.group;
-            console.log(JSON.stringify(group))
             fetchMore();
         }
 
