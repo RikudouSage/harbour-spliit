@@ -15,6 +15,18 @@ SafePage {
     }
 
     Component.onCompleted: {
+        if (!currencyInfo.isValid()) {
+            safeCall(function() {
+                pageStack.replace("ErrorPage.qml", {
+                    //% "Currency Initialization Failed"
+                    title: qsTrId("page.init.currency_initialization_failed"),
+                    //% "Currency formatting libraries failed to load. Please reinstall the app or contact the developer."
+                    errorText: qsTrId("page.init.currency_initialization_failed_description")
+                });
+            });
+            return;
+        }
+
         if (!spliit.isValid()) {
             safeCall(function() {
                 pageStack.replace("ErrorPage.qml", {

@@ -13,7 +13,12 @@
 TARGET = harbour-spliit
 
 QT += concurrent
-PKGCONFIG += icu-uc icu-i18n
+
+harbour_store {
+    DEFINES += ICU_DYNAMIC
+} else {
+    PKGCONFIG += icu-uc icu-i18n
+}
 GO_LIB_BUILD_DIR = $$PWD/lib
 GO_LIB_INSTALL_DIR = /usr/share/$$TARGET/lib
 

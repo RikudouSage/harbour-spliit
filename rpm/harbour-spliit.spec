@@ -6,6 +6,13 @@ Release:    1
 License:    MIT
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
+%{!?harbour_store:%define harbour_store %(if [ -n "$HARBOUR_STORE" ]; then echo 1; elif echo "$PWD" | grep -q -- '-Store'; then echo 1; else echo 0; fi)}
+
+%if 0%{?harbour_store}
+%global __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
+%global __requires_exclude_from ^%{_datadir}/%{name}/lib/.*$
+%global __requires_exclude ^libspliit\\.so$|^libspliit\\.so\\(\\)\\(64bit\\)$|^libicui18n\\.so\\..*$|^libicuuc\\.so\\..*$|^libicudata\\.so\\..*$|^libresolv\\.so\\..*$
+%endif
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -25,7 +32,11 @@ Share Expenses with Friends & Family - No ads. No account. Open Source. Forever 
 
 %build
 
-%qmake5 
+%if 0%{?harbour_store}
+%qmake5 CONFIG+=harbour_store
+%else
+%qmake5
+%endif
 
 %make_build
 
@@ -36,6 +47,8 @@ Share Expenses with Friends & Family - No ads. No account. Open Source. Forever 
 desktop-file-install --delete-original --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*.desktop
 
 strip --strip-unneeded %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
+
+# ICU is loaded dynamically (if present); do not ship ICU shared libraries.
 
 %files
 %defattr(-,root,root,-)
