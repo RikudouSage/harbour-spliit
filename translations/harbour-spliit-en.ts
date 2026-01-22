@@ -57,13 +57,13 @@
     </message>
     <message id="add_group.error.generic">
         <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="60"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="83"/>
         <source>There was an error: %1</source>
         <translation>There was an error: %1</translation>
     </message>
     <message id="add_group.error.not_found">
         <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="67"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="90"/>
         <source>The group does not exist.</source>
         <translation>The group does not exist.</translation>
     </message>
@@ -84,45 +84,45 @@
     </message>
     <message id="global.loading">
         <location filename="../qml/components/DefaultDialog.qml" line="9"/>
-        <location filename="../qml/components/DefaultPage.qml" line="8"/>
+        <location filename="../qml/components/DefaultPage.qml" line="9"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="91"/>
         <location filename="../qml/pages/InitialPage.qml" line="13"/>
         <source>Loading...</source>
         <translation>Loading...</translation>
     </message>
     <message id="group_detail.create_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="55"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="78"/>
         <source>Creating the expense failed: %1</source>
         <translation>Creating the expense failed: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="77"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="84"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="100"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="108"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="106"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="136"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="115"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="145"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="130"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="160"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="174"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="204"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="194"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="224"/>
         <source>Update expense</source>
         <translation>Update expense</translation>
     </message>

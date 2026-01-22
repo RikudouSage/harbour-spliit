@@ -8,6 +8,8 @@ import "../js/strings.js" as Strings
 DefaultPage {
     readonly property int limit: 40
     property int cursor: 0
+    property bool hasMore: true
+    property bool fetchingMore: false
 
     property var group
     property var expenses: []
@@ -15,14 +17,24 @@ DefaultPage {
     function fetchGroup() {
         loading = true;
         group = undefined;
-        expenses = [];
-        cursor = 0;
+        resetItems();
         errorLabel.text = "";
 
         spliit.getGroup(settings.currentGroupId);
     }
 
+    function resetItems() {
+        expenses = [];
+        hasMore = true;
+        cursor = 0;
+        fetchingMore = false;
+    }
+
     function fetchMore() {
+        if (fetchingMore || !hasMore) {
+            return;
+        }
+        fetchingMore = true;
         errorLabel.text = "";
         spliit.listExpenses(group.id, cursor, limit);
     }
@@ -30,6 +42,17 @@ DefaultPage {
     id: page
     title: typeof group === 'undefined' ? '' : group.name
     loading: true
+
+    onContentYChanged: {
+        if (loading) {
+            return;
+        }
+
+        if (page.flickable.contentY + page.flickable.height >= page.flickable.contentHeight - Theme.itemSizeLarge * 4) {
+            fetchMore()
+        }
+    }
+
 
     VerticalScrollDecorator {}
 
@@ -45,7 +68,7 @@ DefaultPage {
         target: spliit
 
         onExpenseCreated: {
-            expenses = [];
+            resetItems();
             fetchMore();
         }
 
@@ -75,6 +98,7 @@ DefaultPage {
         onExpenseListFailed: {
             //% "Failed fetching more expenses from the api"
             errorLabel.text = qsTrId("add_group.error.fetch_more");
+            fetchingMore = false;
             loading = false;
         }
 
@@ -83,6 +107,10 @@ DefaultPage {
                 //% "Failed fetching more expenses from the api"
                 errorLabel.text = qsTrId("add_group.error.fetch_more");
                 return;
+            }
+
+            if (!response.hasMore) {
+                hasMore = false;
             }
 
             const expenses = page.expenses;
@@ -95,6 +123,8 @@ DefaultPage {
                 expenses.push(expense);
             }
             page.expenses = expenses;
+            cursor += limit
+            fetchingMore = false;
             loading = false;
         }
     }
