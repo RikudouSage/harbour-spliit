@@ -32,7 +32,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="group_selector.add_group">
-        <source>Add a group</source>
+        <source>Select existing group</source>
+        <oldsource>Add a group</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="group_selector.invalid_group_provided">
@@ -215,6 +216,10 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="group_detail.error.updating_failed">
         <source>Updating the item failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.create_group">
+        <source>Create group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

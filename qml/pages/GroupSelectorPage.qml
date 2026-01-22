@@ -53,7 +53,15 @@ DefaultPage {
 
     PullDownMenu {
         MenuItem {
-            //% "Add a group"
+            //% "Create group"
+            text: qsTrId("group_selector.create_group")
+            onClicked: {
+                Qt.openUrlExternally("https://spliit.app/groups/create")
+            }
+        }
+
+        MenuItem {
+            //% "Select existing group"
             text: qsTrId("group_selector.add_group")
             onClicked: {
                 const dialog = pageStack.push("AddGroupDialog.qml");

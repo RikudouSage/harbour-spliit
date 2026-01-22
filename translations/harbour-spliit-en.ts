@@ -29,29 +29,35 @@
         <source>Failed fetching list of groups, please  try again later.</source>
         <translation>Failed fetching list of groups, please  try again later.</translation>
     </message>
-    <message id="group_selector.add_group">
+    <message id="group_selector.create_group">
         <location filename="../qml/pages/GroupSelectorPage.qml" line="57"/>
-        <source>Add a group</source>
-        <translation>Add a group</translation>
+        <source>Create group</source>
+        <translation>Create group</translation>
+    </message>
+    <message id="group_selector.add_group">
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="65"/>
+        <source>Select existing group</source>
+        <oldsource>Add a group</oldsource>
+        <translation>Select existing group</translation>
     </message>
     <message id="group_selector.invalid_group_provided">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="63"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="71"/>
         <source>Invalid group provided.</source>
         <translation>Invalid group provided.</translation>
     </message>
     <message id="group_selector.no_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="81"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="89"/>
         <source>There are no groups saved. You can use the pull-down menu to add a new one.</source>
         <translation>There are no groups saved. You can use the pull-down menu to add a new one.</translation>
     </message>
     <message id="group_selector.stored_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="87"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="95"/>
         <source>Saved Groups</source>
         <translation>Saved Groups</translation>
     </message>
     <message id="global.remove">
         <location filename="../qml/components/ExpenseRow.qml" line="39"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="132"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="140"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
