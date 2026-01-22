@@ -21,6 +21,7 @@ jobs:
     strategy:
       matrix:
         store: [yes, no]
+        arch: [armv7hl, aarch64, i486]
         include:
           - arch: armv7hl
             libarch: armv7
