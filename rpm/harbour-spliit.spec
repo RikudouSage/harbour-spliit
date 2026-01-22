@@ -22,9 +22,11 @@ BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:  pkgconfig(icu-i18n)
 BuildRequires:  libicu-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  patchelf
 
 %description
-Share Expenses with Friends & Family - No ads. No account. Open Source. Forever Free.
+Share Expenses with Friends & Family - No ads. No account.
+Open Source. Forever Free.
 
 
 %prep
@@ -47,6 +49,9 @@ Share Expenses with Friends & Family - No ads. No account. Open Source. Forever 
 desktop-file-install --delete-original --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*.desktop
 
 strip --strip-unneeded %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
+strip --strip-unneeded %{buildroot}%{_bindir}/%{name}
+patchelf --remove-rpath %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
+patchelf --set-soname libspliit.so %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
 
 # ICU is loaded dynamically (if present); do not ship ICU shared libraries.
 
@@ -56,3 +61,7 @@ strip --strip-unneeded %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+
+%changelog
+* Thu Jan 22 2026 Dominik <dominik@chrastecky.cz> - 0.8.2-1
+- Initial package
