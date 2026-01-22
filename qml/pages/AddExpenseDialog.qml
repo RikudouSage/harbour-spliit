@@ -3,13 +3,20 @@ import Sailfish.Silica 1.0
 
 import "../components"
 import "../js/objects.js" as Objects
+import "../js/strings.js" as Strings
 import "../js/currencies.js" as Currencies
 
 DefaultDialog {
+    property bool categoriesLoading: true
+    property bool expenseLoading: true
+
     property var currencies: ({})
     property var categories: ({})
     property var participants: ({})
     property var currencyDetail
+
+    property string groupId: ''
+    property string expenseId: ''
 
     property alias name: nameField.text
     property alias amount: amountField.text
@@ -20,10 +27,9 @@ DefaultDialog {
     property alias isReimbursement: isReimbursementSwitch.checked
     property alias notes: notesField.text
     property var paidFor: []
-    property var paidForIds: paidFor.map(function(item) {return item.id});
 
     id: page
-    loading: true
+    loading: categoriesLoading || expenseLoading
     //% "Cancel"
     cancelText: qsTrId("global.cancel")
     //% "Add"
@@ -51,13 +57,13 @@ DefaultDialog {
         }
 
         onCategoryFetchingFailed: {
-            loading = false;
+            categories = false;
             fetchingFailedhandler();
             console.error(error);
         }
 
         onCategoriesFetched: {
-            loading = false;
+            categoriesLoading = false;
             if (response.categories === null) {
                 fetchingFailedHandler();
                 return;
@@ -72,6 +78,44 @@ DefaultDialog {
                 categories[category.id] = category;
             }
             page.categories = categories;
+        }
+
+        onExpenseFetchFailed: {
+            if (id !== expenseId) {
+                return;
+            }
+            // intentionally don't clear loading, staying in forever loading is better
+            //% "Fetching the expense failed: %1"
+            notificationStack.push(qsTrId("add_expense.error.fetching_failed").arg(error), true);
+        }
+
+        onExpenseFetched: {
+            if (response.expense.id !== expenseId) {
+                return;
+            }
+
+            const expense = response.expense;
+
+            if (expense.originalAmount) {
+                //% "Warning: This expense is in a non-default currency, this app does not support it yet. Please don't save anything."
+                notificationStack.push(qsTrId("add_expense.error.unsupported_multi_currency"), true);
+            }
+
+            var amount = Strings.leftPad(String(expense.amount), 3, '0');
+            amount = Strings.insertAt(amount, ".", -2);
+
+            name = expense.title;
+            page.amount = amount;
+            date = new Date(expense.expenseDate);
+            categoryId = expense.category.id;
+            paidBy = expense.paidBy.id;
+            isReimbursement = expense.isReimbursement;
+            notes = expense.notes || '';
+            paidFor = expense.paidFor.map(function(item) {
+                return item.participantId;
+            });
+
+            expenseLoading = false;
         }
     }
 
@@ -92,7 +136,7 @@ DefaultDialog {
     ValueButton {
         //% "Expense date"
         label: qsTrId("add_expense.field.date")
-        value: date.toLocaleDateString(Qt.locale(settings.language), Locale.ShortFormat)
+        value: date ? date.toLocaleDateString(Qt.locale(settings.language), Locale.ShortFormat) : ''
 
         onClicked: {
             const dialog = pageStack.push(datePickerComponent, {
@@ -125,6 +169,7 @@ DefaultDialog {
         value: typeof currencies[currency] !== 'undefined'
                     ? (currencies[currency].name + ' (' + currency + ')')
                     : currency;
+        visible: false
 
         onClicked: {
             const dialog = pageStack.push("SelectCurrencyDialog.qml", {
@@ -189,7 +234,7 @@ DefaultDialog {
         TextSwitch {
             text: modelData.name
             checked: {
-                return paidForIds.length === 0 || paidForIds.indexOf(modelData.id) > -1
+                return paidFor.length === 0 || paidFor.indexOf(modelData.id) > -1
             }
 
             onCheckedChanged: {
@@ -205,17 +250,19 @@ DefaultDialog {
     }
 
     Component.onCompleted: {
-        if (!date) {
-            date = new Date();
-        }
         spliit.getCategories();
-
         currencies = Currencies.getAsMap(settings.language);
-        if (!currency) {
-            currency = "EUR";
-        }
 
-        if (!paidFor.length) {
+        if (expenseId) {
+            spliit.getExpense(groupId, expenseId);
+        } else {
+            expenseLoading = false;
+            date = new Date();
+
+            if (!currency) {
+                currency = "EUR";
+            }
+
             paidFor = Objects.values(participants).map(function(participant) {
                 return participant.id;
             });

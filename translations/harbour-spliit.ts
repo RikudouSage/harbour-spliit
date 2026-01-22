@@ -209,5 +209,13 @@ Paid for unknown participant</extracomment>
         <source>Update expense</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.error.fetching_failed">
+        <source>Fetching the expense failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="add_expense.error.unsupported_multi_currency">
+        <source>Warning: This expense is in a non-default currency, this app does not support it yet. Please don&apos;t save anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

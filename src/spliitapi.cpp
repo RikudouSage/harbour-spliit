@@ -128,6 +128,21 @@ void SpliitApi::deleteExpense(const QString &groupId, const QString &expenseId, 
     );
 }
 
+void SpliitApi::getExpense(const QString &groupId, const QString &expenseId)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    input.insert("expenseId", expenseId);
+
+    runRequest(
+        "groups.expenses.get",
+        input,
+        "Invalid JSON when getting expense",
+        [this](const QJsonObject &response) {emit expenseFetched(response);},
+        [this, expenseId](const QString &error) {emit expenseFetchFailed(expenseId, error);}
+    );
+}
+
 void SpliitApi::runRequest(
     const QString &endpoint,
     const QJsonObject &input,

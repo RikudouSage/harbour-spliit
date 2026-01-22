@@ -23,3 +23,26 @@ function insertAt(original, insertion, target) {
 
     return original.slice(0, pos) + insertion + original.slice(pos);
 }
+
+function leftPad(str, length, pad) {
+    str = String(str);
+
+    if (str.length >= length) {
+        return str;
+    }
+
+    var needed = length - str.length;
+    var result = '';
+
+    while (result.length < needed) {
+      result += pad;
+    }
+
+    // trim if overshoots (e.g. multi-char pad)
+    if (result.length > needed) {
+      result = result.slice(0, needed);
+    }
+
+    return result + str;
+  }
+

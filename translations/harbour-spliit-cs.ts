@@ -37,71 +37,81 @@ Paid for unknown participant</extracomment>
         <translation>Váš zůstatek: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</translation>
     </message>
     <message id="global.cancel">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="28"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="34"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="17"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message id="global.add">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="30"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="36"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="11"/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message id="add_expense.error.category_fetching_failed">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="48"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="54"/>
         <source>Fetching categories failed, only the default category will be available.</source>
         <translation>Získávání kategorií se nezdařilo, bude k dispozici pouze výchozí kategorie.</translation>
     </message>
-    <message id="add_expense.field.name">
+    <message id="add_expense.error.fetching_failed">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="89"/>
+        <source>Fetching the expense failed: %1</source>
+        <translation>Získávání výdaje selhalo: %1</translation>
+    </message>
+    <message id="add_expense.error.unsupported_multi_currency">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="101"/>
+        <source>Warning: This expense is in a non-default currency, this app does not support it yet. Please don&apos;t save anything.</source>
+        <translation>Varování: Tento výdaj není ve výchozí měně, což tato aplikace zatím nepodporuje. Neukládejte nic.</translation>
+    </message>
+    <message id="add_expense.field.name">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="133"/>
         <source>Title</source>
         <extracomment>Title of the expense</extracomment>
         <translation>Název výdaje</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="94"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="138"/>
         <source>Expense date</source>
         <translation>Datum výdaje</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="109"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="153"/>
         <source>Category</source>
         <translation>Kategorie</translation>
     </message>
     <message id="add_expense.field.currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="124"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="168"/>
         <source>Currency</source>
         <translation>Měna výdaje</translation>
     </message>
     <message id="add_expense.field.amount">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="145"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="190"/>
         <source>Amount (%1)</source>
         <translation>Částka (%1)</translation>
     </message>
     <message id="add_expense.field.amount_no_currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="147"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="192"/>
         <source>Amount</source>
         <translation>Částka</translation>
     </message>
     <message id="add_expense.field.is_reimbursement">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="154"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="199"/>
         <source>This is a reimbursement</source>
         <translation>Toto je proplacení</translation>
     </message>
     <message id="add_expense.field.paid_by">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="159"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="204"/>
         <source>Paid by</source>
         <translation>Zaplatil/a</translation>
     </message>
     <message id="add_expense.field.notes">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="177"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="222"/>
         <source>Notes</source>
         <translation>Poznámky</translation>
     </message>
     <message id="add_expense.label.paid_for">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="183"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="228"/>
         <source>Paid for</source>
         <translation>Zaplaceno za</translation>
     </message>
@@ -164,12 +174,12 @@ Paid for unknown participant</extracomment>
         <translation>Přidat výdaj</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="173"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="174"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>No podívejme se na to, žádné výdaje! Proč nějaký nevytvoříte?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="193"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="194"/>
         <source>Update expense</source>
         <translation>Upravit výdaj</translation>
     </message>
