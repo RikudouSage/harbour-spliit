@@ -6,9 +6,13 @@ Release:    1
 License:    MIT
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
+%bcond_with harbour_store
+
+%if %{with harbour_store}
 %global __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
 %global __requires_exclude_from ^%{_datadir}/%{name}/lib/.*$
 %global __requires_exclude ^libspliit\\.so$|^libspliit\\.so\\(\\)\\(64bit\\)$|^libicui18n\\.so\\..*$|^libicuuc\\.so\\..*$|^libicudata\\.so\\..*$
+%endif
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -28,7 +32,11 @@ Share Expenses with Friends & Family - No ads. No account. Open Source. Forever 
 
 %build
 
-%qmake5 
+%if %{with harbour_store}
+%qmake5 CONFIG+=harbour_store
+%else
+%qmake5
+%endif
 
 %make_build
 

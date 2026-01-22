@@ -3,9 +3,11 @@
 #include <QVariantMap>
 #include <QVector>
 #include <QDebug>
+#ifdef ICU_DYNAMIC
 #include <QDir>
 #include <QFileInfo>
 #include <QLibrary>
+#endif
 
 #include <unicode/ucurr.h>
 #include <unicode/uenum.h>
@@ -15,6 +17,7 @@
 namespace {
 constexpr const char *kIcuLibDir = "/usr/share/harbour-spliit/lib/";
 
+#ifdef ICU_DYNAMIC
 template <typename T>
 bool resolveSymbol(QLibrary &lib, const char *name, T &out, QStringList *missing = nullptr)
 {
@@ -109,7 +112,9 @@ QString &icuLastError()
     static QString error;
     return error;
 }
+#endif
 
+#ifdef ICU_DYNAMIC
 struct IcuFunctions {
     bool ok = false;
 
@@ -226,6 +231,7 @@ IcuFunctions &icuFunctions()
     }
     return fns;
 }
+#endif
 
 QString toIcuLocale(const QString &languageTag)
 {
@@ -251,27 +257,38 @@ QString uCharToQString(const UChar *data, int32_t length)
 CurrencyInfo::CurrencyInfo(QObject *parent)
     : QObject(parent)
 {
+#ifdef ICU_DYNAMIC
     const auto &icuFns = icuFunctions();
     if (!icuFns.ok) {
         m_valid = false;
         m_error = icuLastError();
         emit icuLoadFailed(m_error);
     }
+#endif
 }
 
 bool CurrencyInfo::isValid() const
 {
+#ifdef ICU_DYNAMIC
     return m_valid;
+#else
+    return true;
+#endif
 }
 
 QString CurrencyInfo::error() const
 {
+#ifdef ICU_DYNAMIC
     return m_error;
+#else
+    return QString();
+#endif
 }
 
 QStringList CurrencyInfo::allCurrencyCodes() const
 {
     QStringList codes;
+#ifdef ICU_DYNAMIC
     const auto &icuFns = icuFunctions();
     if (!icuFns.ok) {
         return codes;
@@ -290,6 +307,22 @@ QStringList CurrencyInfo::allCurrencyCodes() const
 
     icuFns.uenum_close(en);
     return codes;
+#else
+    UErrorCode status = U_ZERO_ERROR;
+    UEnumeration *en = ucurr_openISOCurrencies(UCURR_COMMON | UCURR_NON_DEPRECATED, &status);
+    if (U_FAILURE(status) || !en) {
+        return codes;
+    }
+
+    int32_t length = 0;
+    const char *code = nullptr;
+    while ((code = uenum_next(en, &length, &status)) != nullptr && U_SUCCESS(status)) {
+        codes.append(QString::fromUtf8(code, length));
+    }
+
+    uenum_close(en);
+    return codes;
+#endif
 }
 
 QVariantList CurrencyInfo::infoForCodes(const QStringList &codes, const QString &languageTag) const
@@ -297,10 +330,12 @@ QVariantList CurrencyInfo::infoForCodes(const QStringList &codes, const QString 
     const QString locale = toIcuLocale(languageTag);
     QVariantList result;
     result.reserve(codes.size());
+#ifdef ICU_DYNAMIC
     const auto &icuFns = icuFunctions();
     if (!icuFns.ok) {
         return result;
     }
+#endif
 
     for (const QString &code : codes) {
         QVariantMap entry;
@@ -309,7 +344,11 @@ QVariantList CurrencyInfo::infoForCodes(const QStringList &codes, const QString 
         UErrorCode status = U_ZERO_ERROR;
         UChar ucode[4] = {0};
         int32_t ucodeLen = 0;
+#ifdef ICU_DYNAMIC
         icuFns.u_strFromUTF8(ucode, 4, &ucodeLen, code.toUtf8().constData(), -1, &status);
+#else
+        u_strFromUTF8(ucode, 4, &ucodeLen, code.toUtf8().constData(), -1, &status);
+#endif
 
         QString symbol = code;
         QString name = code;
@@ -318,18 +357,30 @@ QVariantList CurrencyInfo::infoForCodes(const QStringList &codes, const QString 
 
             status = U_ZERO_ERROR;
             int32_t symbolLen = 0;
+#ifdef ICU_DYNAMIC
             const UChar *symbolPtr = icuFns.ucurr_getName(ucode, locale.toUtf8().constData(),
                                                    UCURR_SYMBOL_NAME, &isChoiceFormat,
                                                    &symbolLen, &status);
+#else
+            const UChar *symbolPtr = ucurr_getName(ucode, locale.toUtf8().constData(),
+                                                   UCURR_SYMBOL_NAME, &isChoiceFormat,
+                                                   &symbolLen, &status);
+#endif
             if (U_SUCCESS(status) && symbolPtr) {
                 symbol = uCharToQString(symbolPtr, symbolLen);
             }
 
             status = U_ZERO_ERROR;
             int32_t nameLen = 0;
+#ifdef ICU_DYNAMIC
             const UChar *namePtr = icuFns.ucurr_getName(ucode, locale.toUtf8().constData(),
                                                  UCURR_LONG_NAME, &isChoiceFormat,
                                                  &nameLen, &status);
+#else
+            const UChar *namePtr = ucurr_getName(ucode, locale.toUtf8().constData(),
+                                                 UCURR_LONG_NAME, &isChoiceFormat,
+                                                 &nameLen, &status);
+#endif
             if (U_SUCCESS(status) && namePtr) {
                 name = uCharToQString(namePtr, nameLen);
             }
@@ -348,43 +399,72 @@ QString CurrencyInfo::formatCurrency(double amount, const QString &currencyCode,
                                       const QString &languageTag) const
 {
     const QString locale = toIcuLocale(languageTag);
+#ifdef ICU_DYNAMIC
     const auto &icuFns = icuFunctions();
     if (!icuFns.ok) {
         return QString();
     }
+#endif
 
     UErrorCode status = U_ZERO_ERROR;
     UChar ucode[4] = {0};
     int32_t ucodeLen = 0;
+#ifdef ICU_DYNAMIC
     icuFns.u_strFromUTF8(ucode, 4, &ucodeLen, currencyCode.toUtf8().constData(), -1, &status);
+#else
+    u_strFromUTF8(ucode, 4, &ucodeLen, currencyCode.toUtf8().constData(), -1, &status);
+#endif
     if (U_FAILURE(status) || ucodeLen <= 0) {
         return QString();
     }
 
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     UNumberFormat *format = icuFns.unum_open(UNUM_CURRENCY, nullptr, 0,
                                       locale.toUtf8().constData(), nullptr, &status);
+#else
+    UNumberFormat *format = unum_open(UNUM_CURRENCY, nullptr, 0,
+                                      locale.toUtf8().constData(), nullptr, &status);
+#endif
     if (U_FAILURE(status) || !format) {
         return QString();
     }
 
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     icuFns.unum_setTextAttribute(format, UNUM_CURRENCY_CODE, ucode, ucodeLen, &status);
+#else
+    unum_setTextAttribute(format, UNUM_CURRENCY_CODE, ucode, ucodeLen, &status);
+#endif
     if (U_FAILURE(status)) {
+#ifdef ICU_DYNAMIC
         icuFns.unum_close(format);
+#else
+        unum_close(format);
+#endif
         return QString();
     }
 
     UChar stackBuffer[64] = {0};
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     int32_t length = icuFns.unum_formatDouble(format, amount, stackBuffer,
                                        sizeof(stackBuffer) / sizeof(UChar), nullptr, &status);
+#else
+    int32_t length = unum_formatDouble(format, amount, stackBuffer,
+                                       sizeof(stackBuffer) / sizeof(UChar), nullptr, &status);
+#endif
     QString result;
     if (status == U_BUFFER_OVERFLOW_ERROR) {
         status = U_ZERO_ERROR;
         QVector<UChar> heapBuffer(length + 1);
+#ifdef ICU_DYNAMIC
         length = icuFns.unum_formatDouble(format, amount, heapBuffer.data(),
                                    heapBuffer.size(), nullptr, &status);
+#else
+        length = unum_formatDouble(format, amount, heapBuffer.data(),
+                                   heapBuffer.size(), nullptr, &status);
+#endif
         if (U_SUCCESS(status)) {
             result = uCharToQString(heapBuffer.data(), length);
         }
@@ -392,50 +472,87 @@ QString CurrencyInfo::formatCurrency(double amount, const QString &currencyCode,
         result = uCharToQString(stackBuffer, length);
     }
 
+#ifdef ICU_DYNAMIC
     icuFns.unum_close(format);
+#else
+    unum_close(format);
+#endif
     return result;
 }
 
 QString CurrencyInfo::formatNumber(double amount, const QString &languageTag) const
 {
     const QString locale = toIcuLocale(languageTag);
+#ifdef ICU_DYNAMIC
     const auto &icuFns = icuFunctions();
     if (!icuFns.ok) {
         return QString();
     }
+#endif
 
     UErrorCode status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     UNumberFormat *format = icuFns.unum_open(UNUM_CURRENCY, nullptr, 0,
                                       locale.toUtf8().constData(), nullptr, &status);
+#else
+    UNumberFormat *format = unum_open(UNUM_CURRENCY, nullptr, 0,
+                                      locale.toUtf8().constData(), nullptr, &status);
+#endif
     if (U_FAILURE(status) || !format) {
         return QString();
     }
 
     const UChar empty[1] = {0};
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     icuFns.unum_setSymbol(format, UNUM_CURRENCY_SYMBOL, empty, 0, &status);
+#else
+    unum_setSymbol(format, UNUM_CURRENCY_SYMBOL, empty, 0, &status);
+#endif
     if (U_FAILURE(status)) {
+#ifdef ICU_DYNAMIC
         icuFns.unum_close(format);
+#else
+        unum_close(format);
+#endif
         return QString();
     }
 
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     icuFns.unum_setSymbol(format, UNUM_INTL_CURRENCY_SYMBOL, empty, 0, &status);
+#else
+    unum_setSymbol(format, UNUM_INTL_CURRENCY_SYMBOL, empty, 0, &status);
+#endif
     if (U_FAILURE(status)) {
+#ifdef ICU_DYNAMIC
         icuFns.unum_close(format);
+#else
+        unum_close(format);
+#endif
         return QString();
     }
 
     UChar stackBuffer[64] = {0};
     status = U_ZERO_ERROR;
+#ifdef ICU_DYNAMIC
     int32_t length = icuFns.unum_formatDouble(format, amount, stackBuffer,
                                        sizeof(stackBuffer) / sizeof(UChar), nullptr, &status);
+#else
+    int32_t length = unum_formatDouble(format, amount, stackBuffer,
+                                       sizeof(stackBuffer) / sizeof(UChar), nullptr, &status);
+#endif
     QString result;
     if (status == U_BUFFER_OVERFLOW_ERROR) {
         status = U_ZERO_ERROR;
         QVector<UChar> heapBuffer(length + 1);
+#ifdef ICU_DYNAMIC
         length = icuFns.unum_formatDouble(format, amount, heapBuffer.data(),
                                    heapBuffer.size(), nullptr, &status);
+#else
+        length = unum_formatDouble(format, amount, heapBuffer.data(),
+                                   heapBuffer.size(), nullptr, &status);
+#endif
         if (U_SUCCESS(status)) {
             result = uCharToQString(heapBuffer.data(), length);
         }
@@ -443,6 +560,10 @@ QString CurrencyInfo::formatNumber(double amount, const QString &languageTag) co
         result = uCharToQString(stackBuffer, length);
     }
 
+#ifdef ICU_DYNAMIC
     icuFns.unum_close(format);
+#else
+    unum_close(format);
+#endif
     return result.trimmed();
 }
