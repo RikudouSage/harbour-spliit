@@ -20,6 +20,7 @@ jobs:
     name: Build App
     strategy:
       matrix:
+        store: [yes, no]
         include:
           - arch: armv7hl
             libarch: armv7
@@ -38,7 +39,17 @@ jobs:
     - name: Prepare
       run: docker pull coderus/sailfishos-platform-sdk:$OS_VERSION && mkdir output
 
+    - name: Build ${{ matrix.arch }} (store)
+      if: matrix.store == 'yes'
+      run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+            mkdir -p build ;
+            cd build ;
+            cp -r /share/* . ;
+            HARBOUR_STORE=1 MB2_QMAKE_ARGS='CONFIG+=harbour_store' mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
+            sudo cp -r RPMS/*.rpm /share/output"
+
     - name: Build ${{ matrix.arch }}
+      if: matrix.store != 'yes'
       run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
             mkdir -p build ;
             cd build ;
@@ -47,9 +58,17 @@ jobs:
             sudo cp -r RPMS/*.rpm /share/output"
       
     - name: Upload RPM (${{ matrix.arch }})
+      if: matrix.store != 'yes'
       uses: actions/upload-artifact@v4
       with:
         name: rpm-${{ matrix.arch }}
+        path: output
+
+    - name: Upload RPM Store (${{ matrix.arch }})
+      if: matrix.store == 'yes'
+      uses: actions/upload-artifact@v4
+      with:
+        name: rpm-store-${{ matrix.arch }}
         path: output
   release:
     name: Release
