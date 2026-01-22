@@ -82,17 +82,17 @@ jobs:
       - name: Download armv7hl
         uses: actions/download-artifact@v4
         with:
-          name: rpm-armv7hl
+          name: rpm-store-armv7hl
         continue-on-error: true
       - name: Download aarch64
         uses: actions/download-artifact@v4
         with:
-          name: rpm-aarch64
+          name: rpm-store-aarch64
         continue-on-error: true
       - name: Download i486
         uses: actions/download-artifact@v4
         with:
-          name: rpm-i486
+          name: rpm-store-i486
         continue-on-error: true
       - name: Extract Version Name
         id: extract_name
