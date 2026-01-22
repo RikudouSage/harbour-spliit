@@ -50,20 +50,20 @@
         <translation>Saved Groups</translation>
     </message>
     <message id="global.remove">
-        <location filename="../qml/components/ExpenseRow.qml" line="37"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="39"/>
         <location filename="../qml/pages/GroupSelectorPage.qml" line="132"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
     <message id="add_group.error.generic">
         <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="83"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="103"/>
         <source>There was an error: %1</source>
         <translation>There was an error: %1</translation>
     </message>
     <message id="add_group.error.not_found">
         <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="90"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="110"/>
         <source>The group does not exist.</source>
         <translation>The group does not exist.</translation>
     </message>
@@ -91,38 +91,43 @@
         <translation>Loading...</translation>
     </message>
     <message id="group_detail.create_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="78"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="98"/>
         <source>Creating the expense failed: %1</source>
         <translation>Creating the expense failed: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="100"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="108"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="120"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="128"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
+    <message id="group_detail.error.updating_failed">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="154"/>
+        <source>Updating the item failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="136"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="187"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="145"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="196"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="160"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="211"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="204"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="238"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="224"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="257"/>
         <source>Update expense</source>
         <translation>Update expense</translation>
     </message>
@@ -249,11 +254,6 @@
         <source>Active user</source>
         <translation>Active user</translation>
     </message>
-    <message id="settings.section.group">
-        <location filename="../qml/pages/SettingsDialog.qml" line="87"/>
-        <source>Group Settings</source>
-        <translation>Group Settings</translation>
-    </message>
     <message id="participant.unknown">
         <location filename="../qml/components/ExpenseRow.qml" line="10"/>
         <location filename="../qml/components/ExpenseRow.qml" line="15"/>
@@ -264,17 +264,17 @@ Paid for unknown participant</extracomment>
         <translation>Unknown</translation>
     </message>
     <message id="expense_row.error.delete">
-        <location filename="../qml/components/ExpenseRow.qml" line="63"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="65"/>
         <source>Failed deleting the item: %1</source>
         <translation>Failed deleting the item: %1</translation>
     </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="108"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="110"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="145"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="147"/>
         <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
         <oldsource>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</oldsource>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>

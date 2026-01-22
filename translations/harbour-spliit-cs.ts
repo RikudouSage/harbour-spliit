@@ -21,17 +21,17 @@ Paid for unknown participant</extracomment>
         <translation>Neznámý</translation>
     </message>
     <message id="expense_row.error.delete">
-        <location filename="../qml/components/ExpenseRow.qml" line="63"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="65"/>
         <source>Failed deleting the item: %1</source>
         <translation>Nezdařilo se smazat položku: %1</translation>
     </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="108"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="110"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Zaplatil/a &lt;strong&gt;%1&lt;/strong&gt; za &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="145"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="147"/>
         <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
         <translation>Váš zůstatek: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</translation>
@@ -117,13 +117,13 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="add_group.error.generic">
         <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="83"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="103"/>
         <source>There was an error: %1</source>
         <translation>Nastala chyba: %1</translation>
     </message>
     <message id="add_group.error.not_found">
         <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="90"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="110"/>
         <source>The group does not exist.</source>
         <translation>Skupina neexistuje.</translation>
     </message>
@@ -148,38 +148,43 @@ Paid for unknown participant</extracomment>
         <translation>Nastala chyba, prosím zkuste to znovu později nebo kontaktujte vývojáře s detaily toho, co jste dělali.</translation>
     </message>
     <message id="group_detail.create_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="78"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="98"/>
         <source>Creating the expense failed: %1</source>
         <translation>Vytváření výdaje sselhalo: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="100"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="108"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="120"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="128"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Nezdařilo se načíst z api více výdajů</translation>
     </message>
+    <message id="group_detail.error.updating_failed">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="154"/>
+        <source>Updating the item failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="136"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="187"/>
         <source>Change group</source>
         <translation>Změnit skupinu</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="145"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="196"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="160"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="211"/>
         <source>Add expense</source>
         <translation>Přidat výdaj</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="204"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="238"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>No podívejme se na to, žádné výdaje! Proč nějaký nevytvoříte?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="224"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="257"/>
         <source>Update expense</source>
         <translation>Upravit výdaj</translation>
     </message>
@@ -215,7 +220,7 @@ Paid for unknown participant</extracomment>
         <translation>Uložené skupiny</translation>
     </message>
     <message id="global.remove">
-        <location filename="../qml/components/ExpenseRow.qml" line="37"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="39"/>
         <location filename="../qml/pages/GroupSelectorPage.qml" line="132"/>
         <source>Remove</source>
         <translation>Odstranit</translation>
@@ -270,11 +275,6 @@ Paid for unknown participant</extracomment>
         <location filename="../qml/pages/SettingsDialog.qml" line="68"/>
         <source>Active user</source>
         <translation>Aktivní uživatel</translation>
-    </message>
-    <message id="settings.section.group">
-        <location filename="../qml/pages/SettingsDialog.qml" line="87"/>
-        <source>Group Settings</source>
-        <translation>Nastavení skupiny</translation>
     </message>
 </context>
 </TS>

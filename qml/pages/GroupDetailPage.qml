@@ -39,6 +39,26 @@ DefaultPage {
         spliit.listExpenses(group.id, cursor, limit);
     }
 
+    function createFormFromDialog(dialog) {
+        return {
+            expenseDate: dialog.date.toISOString(),
+            title: dialog.name,
+            category: dialog.categoryId,
+            amount: Number(String(dialog.amount) + "00"),
+            paidBy: dialog.paidBy,
+            paidFor: dialog.paidFor.map(function(id) {
+                return {
+                    participant: id,
+                    shares: 100,
+                };
+            }),
+            splitMode: "EVENLY",
+            isReimbursement: dialog.isReimbursement,
+            notes: dialog.notes,
+            recurrenceRule: "NONE",
+        };
+    }
+
     id: page
     title: typeof group === 'undefined' ? '' : group.name
     loading: true
@@ -127,6 +147,37 @@ DefaultPage {
             fetchingMore = false;
             loading = false;
         }
+
+        onExpenseUpdateFailed: {
+            loading = false;
+            //% "Updating the item failed: %1"
+            notificationStack.push(qsTrId("group_detail.error.updating_failed").arg(error), true);
+        }
+
+        onExpenseUpdated: {
+            spliit.getExpense(group.id, id);
+        }
+
+        onExpenseFetched: {
+            const expense = response.expense;
+            const id = expense.id;
+
+            const expenses = page.expenses;
+            for (var i in expenses) {
+                if (!expenses.hasOwnProperty(i)) {
+                    continue;
+                }
+
+                const item = expenses[i];
+                if (item.id !== id) {
+                    continue;
+                }
+                expenses[i] = expense;
+                break;
+            }
+            page.expenses = expenses;
+            loading = false;
+        }
     }
 
     PullDownMenu {
@@ -168,24 +219,7 @@ DefaultPage {
                 });
                 dialog.accepted.connect(function() {
                     loading = true;
-                    const form = {
-                        expenseDate: dialog.date.toISOString(),
-                        title: dialog.name,
-                        category: dialog.categoryId,
-                        amount: Number(String(dialog.amount) + "00"),
-                        paidBy: dialog.paidBy,
-                        paidFor: dialog.paidFor.map(function(id) {
-                            return {
-                                participant: id,
-                                shares: 100,
-                            };
-                        }),
-                        splitMode: "EVENLY",
-                        isReimbursement: dialog.isReimbursement,
-                        notes: dialog.notes,
-                        recurrenceRule: "NONE",
-                    };
-
+                    const form = page.createFormFromDialog(dialog);
                     spliit.createExpense(group.id, form, settings.currentParticipantId);
                 });
             }
@@ -217,14 +251,24 @@ DefaultPage {
                 visible = false;
             }
             onClicked: {
-                // todo fetch detail
                 const dialog = pageStack.push("AddExpenseDialog.qml", {
                     participants: Arrays.objectify(group.participants, "id"),
                     //% "Update expense"
                     acceptText: qsTrId("add_expense.confirm_text"),
                     groupId: group.id,
-                    expenseId: expense.id,
+                    expenseId: modelData.id,
                     currency: group.currencyCode || group.currency,
+                });
+
+                const pageCopy = page;
+                const groupCopy = page.group;
+                const modelDataCopy = modelData;
+                const settingsCopy = settings;
+                const spliitCopy = spliit;
+                dialog.accepted.connect(function() {
+                    loading = true;
+                    const form = pageCopy.createFormFromDialog(dialog);
+                    spliitCopy.updateExpense(groupCopy.id, modelDataCopy.id, form, settingsCopy.currentParticipantId);
                 });
             }
         }

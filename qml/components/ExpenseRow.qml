@@ -14,7 +14,9 @@ ListItem {
         //% "Unknown"
         ? qsTrId("participant.unknown")
         : expense.paidFor.map(function(item) {
-            return item.participant.name;
+            return item.participant
+                    ? item.participant.name
+                    : participants[item.participantId].name;
         }).join(', ')
 
     property var participants: ({})

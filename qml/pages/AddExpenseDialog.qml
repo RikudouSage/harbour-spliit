@@ -239,12 +239,15 @@ DefaultDialog {
 
             onCheckedChanged: {
                 if (checked) {
-                    paidFor.push(modelData.id);
+                    if (paidFor.indexOf(modelData.id) === -1) {
+                        paidFor.push(modelData.id);
+                    }
                 } else {
                     paidFor = paidFor.filter(function(id) {
                         return id !== modelData.id;
                     });
                 }
+
             }
         }
     }

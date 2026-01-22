@@ -96,6 +96,8 @@ void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request
         input.insert("participantId", participantId);
     }
 
+    qDebug () << QString::fromUtf8(QJsonDocument(input).toJson());
+
     runRequest(
         "groups.expenses.create",
         input,
@@ -140,6 +142,28 @@ void SpliitApi::getExpense(const QString &groupId, const QString &expenseId)
         "Invalid JSON when getting expense",
         [this](const QJsonObject &response) {emit expenseFetched(response);},
         [this, expenseId](const QString &error) {emit expenseFetchFailed(expenseId, error);}
+    );
+}
+
+void SpliitApi::updateExpense(const QString &groupId, const QString &expenseId, const QVariantMap &request, const QString &participantId)
+{
+    QJsonObject input;
+    input.insert("expenseId", expenseId);
+    input.insert("groupId", groupId);
+    input.insert("expenseFormValues", QJsonObject::fromVariantMap(request));
+    if (participantId != "") {
+        input.insert("participantId", participantId);
+    }
+
+
+    qDebug () << QString::fromUtf8(QJsonDocument(input).toJson());
+
+    runRequest(
+        "groups.expenses.update",
+        input,
+        "Invalid JSON when updating expense",
+        [this](const QJsonObject &response) {emit expenseUpdated(response.value("expenseId").toString());},
+        [this, expenseId](const QString &error) {emit expenseUpdateFailed(expenseId, error);}
     );
 }
 

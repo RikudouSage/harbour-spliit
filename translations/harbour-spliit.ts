@@ -156,10 +156,6 @@
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="settings.section.group">
-        <source>Group Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="global.settings">
         <source>Settings</source>
         <translation type="unfinished"></translation>
@@ -215,6 +211,10 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="add_expense.error.unsupported_multi_currency">
         <source>Warning: This expense is in a non-default currency, this app does not support it yet. Please don&apos;t save anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.error.updating_failed">
+        <source>Updating the item failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
