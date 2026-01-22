@@ -42,21 +42,23 @@ jobs:
 
     - name: Build ${{ matrix.arch }} (store)
       if: matrix.store == 'yes'
-      run: docker run --rm --privileged -e RPMLINT_CONFIG=/share/.rpmlintrc -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+      run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
             HARBOUR_STORE=1 MB2_QMAKE_ARGS='CONFIG+=harbour_store' mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
-            sudo cp -r RPMS/*.rpm /share/output"
+            sudo cp -r RPMS/*.rpm /share/output ;
+            sudo cp /share/harbour-spliit.rpmlintrc /share/output/harbour-spliit.rpmlintrc"
 
     - name: Build ${{ matrix.arch }}
       if: matrix.store != 'yes'
-      run: docker run --rm --privileged -e RPMLINT_CONFIG=/share/.rpmlintrc -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+      run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
             mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
-            sudo cp -r RPMS/*.rpm /share/output"
+            sudo cp -r RPMS/*.rpm /share/output ;
+            sudo cp /share/harbour-spliit.rpmlintrc /share/output/harbour-spliit.rpmlintrc"
       
     - name: Upload RPM (${{ matrix.arch }})
       if: matrix.store != 'yes'
