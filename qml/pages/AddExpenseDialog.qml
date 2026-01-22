@@ -182,7 +182,7 @@ DefaultDialog {
     }
 
     TextField {
-        readonly property bool isValid: text != "" && (Number(text) > 0 || Number(text) < 0)
+        readonly property bool isValid: text !== "" && !isNaN(Currencies.parseAmountToCents(text)) && Currencies.parseAmountToCents(text) !== 0
 
         id: amountField
         label: currencyDetail

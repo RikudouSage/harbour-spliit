@@ -117,13 +117,13 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="add_group.error.generic">
         <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="103"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="104"/>
         <source>There was an error: %1</source>
         <translation>Nastala chyba: %1</translation>
     </message>
     <message id="add_group.error.not_found">
         <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="110"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="111"/>
         <source>The group does not exist.</source>
         <translation>Skupina neexistuje.</translation>
     </message>
@@ -148,43 +148,43 @@ Paid for unknown participant</extracomment>
         <translation>Nastala chyba, prosím zkuste to znovu později nebo kontaktujte vývojáře s detaily toho, co jste dělali.</translation>
     </message>
     <message id="group_detail.create_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="98"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="99"/>
         <source>Creating the expense failed: %1</source>
         <translation>Vytváření výdaje sselhalo: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="120"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="128"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="121"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="129"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Nezdařilo se načíst z api více výdajů</translation>
     </message>
     <message id="group_detail.error.updating_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="154"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="155"/>
         <source>Updating the item failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="187"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="188"/>
         <source>Change group</source>
         <translation>Změnit skupinu</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="196"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="197"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="211"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="212"/>
         <source>Add expense</source>
         <translation>Přidat výdaj</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="238"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="239"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>No podívejme se na to, žádné výdaje! Proč nějaký nevytvoříte?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="257"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="258"/>
         <source>Update expense</source>
         <translation>Upravit výdaj</translation>
     </message>

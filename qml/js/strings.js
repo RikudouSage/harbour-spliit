@@ -45,4 +45,3 @@ function leftPad(str, length, pad) {
 
     return result + str;
   }
-

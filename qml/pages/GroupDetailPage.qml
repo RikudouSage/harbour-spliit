@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 import "../components"
 import "../js/arrays.js" as Arrays
 import "../js/strings.js" as Strings
+import "../js/currencies.js" as Currencies
 
 DefaultPage {
     readonly property int limit: 40
@@ -44,7 +45,7 @@ DefaultPage {
             expenseDate: dialog.date.toISOString(),
             title: dialog.name,
             category: dialog.categoryId,
-            amount: Number(String(dialog.amount) + "00"),
+            amount: Currencies.parseAmountToCents(dialog.amount),
             paidBy: dialog.paidBy,
             paidFor: dialog.paidFor.map(function(id) {
                 return {

@@ -96,8 +96,6 @@ void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request
         input.insert("participantId", participantId);
     }
 
-    qDebug () << QString::fromUtf8(QJsonDocument(input).toJson());
-
     runRequest(
         "groups.expenses.create",
         input,
@@ -154,9 +152,6 @@ void SpliitApi::updateExpense(const QString &groupId, const QString &expenseId, 
     if (participantId != "") {
         input.insert("participantId", participantId);
     }
-
-
-    qDebug () << QString::fromUtf8(QJsonDocument(input).toJson());
 
     runRequest(
         "groups.expenses.update",
