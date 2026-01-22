@@ -8,7 +8,7 @@ CoverBackground {
         text: "Spliit"
     }
 
-    CoverActionList {
+    /*CoverActionList {
         id: coverAction
 
         CoverAction {
@@ -18,5 +18,5 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-pause"
         }
-    }
+    }*/
 }
