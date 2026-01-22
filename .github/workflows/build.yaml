@@ -42,7 +42,7 @@ jobs:
 
     - name: Build ${{ matrix.arch }} (store)
       if: matrix.store == 'yes'
-      run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+      run: docker run --rm --privileged -e RPMLINT_CONFIG=/share/.rpmlintrc -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
@@ -51,7 +51,7 @@ jobs:
 
     - name: Build ${{ matrix.arch }}
       if: matrix.store != 'yes'
-      run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+      run: docker run --rm --privileged -e RPMLINT_CONFIG=/share/.rpmlintrc -v $PWD:/share coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
