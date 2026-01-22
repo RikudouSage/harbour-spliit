@@ -56,36 +56,36 @@
         <translation>Remove</translation>
     </message>
     <message id="add_group.error.generic">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="21"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="22"/>
         <location filename="../qml/pages/GroupDetailPage.qml" line="104"/>
         <source>There was an error: %1</source>
         <translation>There was an error: %1</translation>
     </message>
     <message id="add_group.error.not_found">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="29"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="30"/>
         <location filename="../qml/pages/GroupDetailPage.qml" line="111"/>
         <source>The group does not exist.</source>
         <translation>The group does not exist.</translation>
     </message>
     <message id="add_group.help_text">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="49"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="50"/>
         <source>Please provide the group ID below.</source>
         <translation>Please provide the group ID below.</translation>
     </message>
     <message id="add_group.group_id_field.label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="55"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="56"/>
         <source>Group ID</source>
         <translation>Group ID</translation>
     </message>
     <message id="add_group.group_name_label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="80"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="81"/>
         <source>Group name: %1</source>
         <translation>Group name: %1</translation>
     </message>
     <message id="global.loading">
         <location filename="../qml/components/DefaultDialog.qml" line="9"/>
         <location filename="../qml/components/DefaultPage.qml" line="9"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="91"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="92"/>
         <location filename="../qml/pages/InitialPage.qml" line="13"/>
         <source>Loading...</source>
         <translation>Loading...</translation>
@@ -133,14 +133,14 @@
     </message>
     <message id="global.cancel">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="34"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="13"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="14"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="17"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message id="global.add">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="36"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="11"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="12"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>

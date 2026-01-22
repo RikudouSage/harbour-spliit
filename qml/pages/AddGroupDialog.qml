@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 import "../components"
 
 DefaultDialog {
+    property bool loading: false
     property string groupId
     property string groupName
 
