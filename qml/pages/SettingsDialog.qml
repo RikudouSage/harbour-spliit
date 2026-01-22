@@ -82,10 +82,10 @@ DefaultDialog {
             }
         }
 
-        ExpandingSection {
+        /*ExpandingSection {
             //% "Group Settings"
             title: qsTrId("settings.section.group")
-        }
+        }*/
     }
 
     onGroupChanged: {
