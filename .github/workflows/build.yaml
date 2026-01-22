@@ -33,8 +33,8 @@ jobs:
         submodules: recursive
     - name: Download lib
       run: |
-        wget "https://github.com/RikudouSage/SpliitApi/releases/latest/download/libspliit-${{ matrix.libarch }}.h" -o lib/libspliit.h
-        wget "https://github.com/RikudouSage/SpliitApi/releases/latest/download/libspliit-${{ matrix.libarch }}.so" -o lib/libspliit.so
+        wget "https://github.com/RikudouSage/SpliitApi/releases/latest/download/libspliit-${{ matrix.libarch }}.h" -O lib/libspliit.h
+        wget "https://github.com/RikudouSage/SpliitApi/releases/latest/download/libspliit-${{ matrix.libarch }}.so" -O lib/libspliit.so
     - name: Prepare
       run: docker pull coderus/sailfishos-platform-sdk:$OS_VERSION && mkdir output
 
