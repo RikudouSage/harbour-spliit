@@ -234,12 +234,12 @@ Paid for unknown participant</extracomment>
     <message id="page.init.currency_initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="22"/>
         <source>Currency Initialization Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezdařilo se načíst měny</translation>
     </message>
     <message id="page.init.currency_initialization_failed_description">
         <location filename="../qml/pages/InitialPage.qml" line="24"/>
         <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezdařilo se načíst knihovny pro formátování měn. Prosím zkuste aplikace přeinstalovat nebo kontaktujte vývojáře.</translation>
     </message>
     <message id="page.init.initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="34"/>

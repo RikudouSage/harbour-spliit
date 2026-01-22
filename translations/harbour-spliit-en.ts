@@ -11,12 +11,12 @@
     <message id="page.init.currency_initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="22"/>
         <source>Currency Initialization Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Currency Initialization Failed</translation>
     </message>
     <message id="page.init.currency_initialization_failed_description">
         <location filename="../qml/pages/InitialPage.qml" line="24"/>
         <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</translation>
     </message>
     <message id="page.init.initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="34"/>

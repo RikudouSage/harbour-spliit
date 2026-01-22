@@ -5,7 +5,6 @@
 #include <QDebug>
 #ifdef ICU_DYNAMIC
 #include <QDir>
-#include <QFileInfo>
 #include <QLibrary>
 #endif
 

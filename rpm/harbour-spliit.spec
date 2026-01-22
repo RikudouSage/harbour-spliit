@@ -48,7 +48,6 @@ desktop-file-install --delete-original --dir %{buildroot}%{_datadir}/application
 
 strip --strip-unneeded %{buildroot}%{_datadir}/%{name}/lib/libspliit.so
 
-# Bundle ICU to avoid external shared-library runtime dependencies.
 # ICU is loaded dynamically (if present); do not ship ICU shared libraries.
 
 %files
