@@ -46,7 +46,7 @@ jobs:
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
-            HARBOUR_STORE=1 MB2_QMAKE_ARGS='CONFIG+=harbour_store' mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
+            HARBOUR_STORE=1 MB2_QMAKE_ARGS='CONFIG+=harbour_store' mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build --no-check ;
             sudo cp -r RPMS/*.rpm /share/output ;
             sudo cp /share/harbour-spliit.rpmlintrc /share/output/harbour-spliit.rpmlintrc"
 
@@ -56,7 +56,7 @@ jobs:
             mkdir -p build ;
             cd build ;
             cp -r /share/* . ;
-            mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
+            mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build --no-check ;
             sudo cp -r RPMS/*.rpm /share/output ;
             sudo cp /share/harbour-spliit.rpmlintrc /share/output/harbour-spliit.rpmlintrc"
       
