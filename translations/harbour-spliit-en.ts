@@ -104,7 +104,7 @@
     <message id="group_detail.error.updating_failed">
         <location filename="../qml/pages/GroupDetailPage.qml" line="155"/>
         <source>Updating the item failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Updating the item failed: %1</translation>
     </message>
     <message id="group_detail.change_group">
         <location filename="../qml/pages/GroupDetailPage.qml" line="188"/>
