@@ -85,8 +85,9 @@
     </message>
     <message id="add_group.help_text">
         <location filename="../qml/pages/AddGroupDialog.qml" line="50"/>
-        <source>Please provide the group ID below.</source>
-        <translation>Please provide the group ID below.</translation>
+        <source>Please provide the group ID or share link below.</source>
+        <oldsource>Please provide the group ID below.</oldsource>
+        <translation>Please provide the group ID or share link below.</translation>
     </message>
     <message id="add_group.group_id_field.label">
         <location filename="../qml/pages/AddGroupDialog.qml" line="56"/>
@@ -94,14 +95,14 @@
         <translation>Group ID</translation>
     </message>
     <message id="add_group.group_name_label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="81"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="89"/>
         <source>Group name: %1</source>
         <translation>Group name: %1</translation>
     </message>
     <message id="global.loading">
         <location filename="../qml/components/DefaultDialog.qml" line="9"/>
         <location filename="../qml/components/DefaultPage.qml" line="9"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="92"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="100"/>
         <location filename="../qml/pages/InitialPage.qml" line="13"/>
         <source>Loading...</source>
         <translation>Loading...</translation>

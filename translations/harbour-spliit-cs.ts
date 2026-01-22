@@ -6,7 +6,7 @@
     <message id="global.loading">
         <location filename="../qml/components/DefaultDialog.qml" line="9"/>
         <location filename="../qml/components/DefaultPage.qml" line="9"/>
-        <location filename="../qml/pages/AddGroupDialog.qml" line="92"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="100"/>
         <location filename="../qml/pages/InitialPage.qml" line="13"/>
         <source>Loading...</source>
         <translation>Načítání...</translation>
@@ -129,8 +129,9 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="add_group.help_text">
         <location filename="../qml/pages/AddGroupDialog.qml" line="50"/>
-        <source>Please provide the group ID below.</source>
-        <translation>Prosím zadejte ID skupiny níže.</translation>
+        <source>Please provide the group ID or share link below.</source>
+        <oldsource>Please provide the group ID below.</oldsource>
+        <translation>Prosím zadejte ID skupiny nebo odkaz pro sdílení níže.</translation>
     </message>
     <message id="add_group.group_id_field.label">
         <location filename="../qml/pages/AddGroupDialog.qml" line="56"/>
@@ -138,7 +139,7 @@ Paid for unknown participant</extracomment>
         <translation>ID skupiny</translation>
     </message>
     <message id="add_group.group_name_label">
-        <location filename="../qml/pages/AddGroupDialog.qml" line="81"/>
+        <location filename="../qml/pages/AddGroupDialog.qml" line="89"/>
         <source>Group name: %1</source>
         <translation>Název skupiny: %1</translation>
     </message>

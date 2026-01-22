@@ -24,7 +24,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="add_group.help_text">
-        <source>Please provide the group ID below.</source>
+        <source>Please provide the group ID or share link below.</source>
+        <oldsource>Please provide the group ID below.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="add_group.group_id_field.label">

@@ -46,7 +46,7 @@ DefaultDialog {
     }
 
     StandardLabel {
-        //% "Please provide the group ID below."
+        //% "Please provide the group ID or share link below."
         text: qsTrId("add_group.help_text")
     }
 
@@ -61,6 +61,14 @@ DefaultDialog {
             groupName = "";
             debounceFetchTimer.stop();
             errorLabel.text = "";
+
+            if (groupId.indexOf('https://') === 0) {
+                var regex = /https:\/\/spliit\.app\/groups\/([^\/]+)(?:\/|$)/;
+                var matches = groupId.match(regex);
+                if (matches) {
+                    groupId = matches[1];
+                }
+            }
 
             if (text) {
                 loading = true;
