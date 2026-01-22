@@ -8,13 +8,23 @@
         <source>There was an error, please try again later or contact the developer with details about what you were doing.</source>
         <translation>There was an error, please try again later or contact the developer with details about what you were doing.</translation>
     </message>
-    <message id="page.init.initialization_failed">
+    <message id="page.init.currency_initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="22"/>
+        <source>Currency Initialization Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.currency_initialization_failed_description">
+        <location filename="../qml/pages/InitialPage.qml" line="24"/>
+        <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.initialization_failed">
+        <location filename="../qml/pages/InitialPage.qml" line="34"/>
         <source>Initialization Failed</source>
         <translation>Initialization Failed</translation>
     </message>
     <message id="page.init.initialization_failed_description">
-        <location filename="../qml/pages/InitialPage.qml" line="24"/>
+        <location filename="../qml/pages/InitialPage.qml" line="36"/>
         <source>The initialization of the app failed. There&apos;s not much you can do about it except contacting the developer.</source>
         <translation>The initialization of the app failed. There&apos;s not much you can do about it except contacting the developer.</translation>
     </message>

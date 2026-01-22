@@ -231,13 +231,23 @@ Paid for unknown participant</extracomment>
         <source>Remove</source>
         <translation>Odstranit</translation>
     </message>
-    <message id="page.init.initialization_failed">
+    <message id="page.init.currency_initialization_failed">
         <location filename="../qml/pages/InitialPage.qml" line="22"/>
+        <source>Currency Initialization Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.currency_initialization_failed_description">
+        <location filename="../qml/pages/InitialPage.qml" line="24"/>
+        <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.initialization_failed">
+        <location filename="../qml/pages/InitialPage.qml" line="34"/>
         <source>Initialization Failed</source>
         <translation>Inicializace selhala</translation>
     </message>
     <message id="page.init.initialization_failed_description">
-        <location filename="../qml/pages/InitialPage.qml" line="24"/>
+        <location filename="../qml/pages/InitialPage.qml" line="36"/>
         <source>The initialization of the app failed. There&apos;s not much you can do about it except contacting the developer.</source>
         <translation>Inicializace aplikace selhala. Moc s tím toho nenaděláte, můžete ale kontaktovat vývojáře.</translation>
     </message>

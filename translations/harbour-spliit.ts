@@ -222,5 +222,13 @@ Paid for unknown participant</extracomment>
         <source>Create group</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="page.init.currency_initialization_failed">
+        <source>Currency Initialization Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="page.init.currency_initialization_failed_description">
+        <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
