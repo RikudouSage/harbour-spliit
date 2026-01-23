@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE void deleteExpense(const QString &groupId, const QString &expenseId, const QString &participantId);
     Q_INVOKABLE void getExpense(const QString &groupId, const QString &expenseId);
     Q_INVOKABLE void updateExpense(const QString &groupId, const QString &expenseId, const QVariantMap &request, const QString &participantId);
+    Q_INVOKABLE void updateGroup(const QString &groupId, const QVariantMap &request, const QString &participantId);
 
 signals:
     void groupFetched(const QJsonObject &response);
@@ -40,6 +41,8 @@ signals:
     void expenseFetchFailed(const QString &id, const QString &error);
     void expenseUpdated(const QString &id);
     void expenseUpdateFailed(const QString &expenseId, const QString &error);
+    void groupUpdated();
+    void groupUpdateFailed(const QString &error);
 
 private:
     void runRequest(
@@ -47,7 +50,8 @@ private:
         const QJsonObject &input,
         const QString &invalidJsonError,
         const std::function<void(const QJsonObject &)> &onSuccess,
-        const std::function<void(const QString &)> &onError
+        const std::function<void(const QString &)> &onError,
+        bool allowNullResponse = false
     );
     const QString getLastError() const;
 

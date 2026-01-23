@@ -123,35 +123,40 @@
         <source>Updating the item failed: %1</source>
         <translation>Updating the item failed: %1</translation>
     </message>
+    <message id="group_detail.error.group_update">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="189"/>
+        <source>Failed updating group: %1</source>
+        <translation>Failed updating group: %1</translation>
+    </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="188"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="198"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="197"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="207"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="212"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="232"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="239"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="259"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="258"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="278"/>
         <source>Update expense</source>
         <translation>Update expense</translation>
     </message>
     <message id="global.cancel">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="34"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="14"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="17"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="22"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
@@ -246,30 +251,60 @@
         <translation>Choose a participant</translation>
     </message>
     <message id="global.save">
-        <location filename="../qml/pages/SettingsDialog.qml" line="15"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="20"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message id="settings.section.app">
-        <location filename="../qml/pages/SettingsDialog.qml" line="24"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="29"/>
         <source>App Settings</source>
         <translation>App Settings</translation>
     </message>
     <message id="settings.language.auto">
-        <location filename="../qml/pages/SettingsDialog.qml" line="34"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="36"/>
         <source>Automatic</source>
         <extracomment>As in automatic language selection</extracomment>
         <translation>Automatic</translation>
     </message>
     <message id="settings.language.label">
-        <location filename="../qml/pages/SettingsDialog.qml" line="42"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="44"/>
         <source>Language</source>
         <translation>Language</translation>
     </message>
     <message id="settings.current_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="68"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="70"/>
         <source>Active user</source>
         <translation>Active user</translation>
+    </message>
+    <message id="settings.section.group">
+        <location filename="../qml/pages/SettingsDialog.qml" line="89"/>
+        <source>Group Settings</source>
+        <translation>Group Settings</translation>
+    </message>
+    <message id="settings.group_name">
+        <location filename="../qml/pages/SettingsDialog.qml" line="95"/>
+        <source>Group name</source>
+        <translation>Group name</translation>
+    </message>
+    <message id="settings.currency">
+        <location filename="../qml/pages/SettingsDialog.qml" line="107"/>
+        <source>Main currency</source>
+        <translation>Main currency</translation>
+    </message>
+    <message id="settings.group_information">
+        <location filename="../qml/pages/SettingsDialog.qml" line="128"/>
+        <source>Group information</source>
+        <translation>Group information</translation>
+    </message>
+    <message id="settings.participants">
+        <location filename="../qml/pages/SettingsDialog.qml" line="141"/>
+        <source>Participants</source>
+        <translation>Participants</translation>
+    </message>
+    <message id="settings.add_participant">
+        <location filename="../qml/pages/SettingsDialog.qml" line="179"/>
+        <source>Add participant</source>
+        <translation>Add participant</translation>
     </message>
     <message id="participant.unknown">
         <location filename="../qml/components/ExpenseRow.qml" line="10"/>

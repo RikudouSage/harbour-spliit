@@ -231,5 +231,33 @@ Paid for unknown participant</extracomment>
         <source>Currency formatting libraries failed to load. Please reinstall the app or contact the developer.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="settings.section.group">
+        <source>Group Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.group_name">
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.currency">
+        <source>Main currency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.group_information">
+        <source>Group information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.participants">
+        <source>Participants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.add_participant">
+        <source>Add participant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.error.group_update">
+        <source>Failed updating group: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

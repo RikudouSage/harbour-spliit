@@ -35,7 +35,7 @@ void SpliitApi::getGroup(const QString &groupId)
     input.insert("groupId", groupId);
 
     runRequest(
-        "groups.get",
+        "groups.getDetails",
         input,
         "Invalid JSON in group response",
         [this](const QJsonObject &response) { emit groupFetched(response); },
@@ -162,17 +162,37 @@ void SpliitApi::updateExpense(const QString &groupId, const QString &expenseId, 
     );
 }
 
+void SpliitApi::updateGroup(const QString &groupId, const QVariantMap &request, const QString &participantId)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    input.insert("groupFormValues", QJsonObject::fromVariantMap(request));
+    if (participantId != "") {
+        input.insert("participantId", participantId);
+    }
+
+    runRequest(
+        "groups.update",
+        input,
+        "Invalid JSON when updating group",
+        [this](const QJsonObject &response) {Q_UNUSED(response); emit groupUpdated();},
+        [this](const QString &error) {emit groupUpdateFailed(error);},
+        true
+    );
+}
+
 void SpliitApi::runRequest(
     const QString &endpoint,
     const QJsonObject &input,
     const QString &invalidJsonError,
     const std::function<void(const QJsonObject &)> &onSuccess,
-    const std::function<void(const QString &)> &onError
+    const std::function<void(const QString &)> &onError,
+    bool allowNullResponse
 ) {
     const quint64 client = m_clientPointer;
     QPointer<SpliitApi> self(this);
 
-    QtConcurrent::run([self, client, endpoint, input, invalidJsonError, onSuccess, onError] {
+    QtConcurrent::run([self, client, endpoint, input, invalidJsonError, onSuccess, onError, allowNullResponse] {
         if (!self) {
             return;
         }
@@ -214,6 +234,8 @@ void SpliitApi::runRequest(
                 const auto doc = QJsonDocument::fromJson(resultJson);
                 if (doc.isObject()) {
                     response = doc.object();
+                } else if (doc.isNull() && allowNullResponse) {
+                    response = QJsonObject();
                 } else {
                     error = invalidJsonError;
                 }

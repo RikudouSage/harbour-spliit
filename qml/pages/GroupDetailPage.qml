@@ -179,6 +179,16 @@ DefaultPage {
             page.expenses = expenses;
             loading = false;
         }
+
+        onGroupUpdated: {
+            fetchGroup();
+        }
+
+        onGroupUpdateFailed: {
+            //% "Failed updating group: %1"
+            notificationStack.push(qsTrId("group_detail.error.group_update").arg(error), true);
+            console.error(error);
+        }
     }
 
     PullDownMenu {
@@ -203,6 +213,16 @@ DefaultPage {
                 dialog.accepted.connect(function() {
                     settings.rawLanguage = dialog.language;
                     settings.currentParticipantId = dialog.participant;
+
+                    var form = {
+                        name: dialog.group.name,
+                        information: dialog.group.information || null,
+                        currencyCode: dialog.group.currencyCode,
+                        currency: currencyInfo.infoForCodes([dialog.group.currencyCode], settings.language)[0].symbol,
+                        participants: dialog.updatedParticipants,
+                    };
+
+                    spliit.updateGroup(group.id, form, settings.currentParticipantId);
                 });
             }
         }
