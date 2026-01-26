@@ -1,7 +1,7 @@
 Name:       harbour-spliit
 
 Summary:    Spliit
-Version:    0.8.6
+Version:    0.8.7
 Release:    1
 License:    MIT
 URL:        http://example.org/
