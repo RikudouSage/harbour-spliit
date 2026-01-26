@@ -12,6 +12,8 @@ DefaultDialog {
     property var currencies: ({})
     property var updatedParticipants: ({});
 
+    property bool groupChanged: false
+
     property string language: settings.rawLanguage
     property string participant: settings.currentParticipantId
 
@@ -97,6 +99,7 @@ DefaultDialog {
 
                     onTextChanged: {
                         group.name = text;
+                        groupChanged = true;
                     }
                 }
 
@@ -120,6 +123,7 @@ DefaultDialog {
 
                     onCurrencyChanged: {
                         group.currencyCode = currency;
+                        groupChanged = true;
                     }
                 }
 
@@ -130,6 +134,7 @@ DefaultDialog {
 
                     onTextChanged: {
                         group.information = text || null;
+                        groupChanged = true;
                     }
                 }
 
@@ -158,6 +163,7 @@ DefaultDialog {
                                 }
                                 modelData.name = text;
                                 updatedParticipants[index].name = text;
+                                groupChanged = true;
                             }
                         }
                         IconButton {
@@ -169,6 +175,7 @@ DefaultDialog {
                                 var modelCopy = updatedParticipants;
                                 modelCopy.splice(index, 1);
                                 updatedParticipants = modelCopy;
+                                groupChanged = true;
                             }
                         }
                     }
@@ -183,6 +190,7 @@ DefaultDialog {
                         var modelCopy = updatedParticipants;
                         modelCopy.push({id: null, name: ""});
                         updatedParticipants = modelCopy;
+                        groupChanged = true;
                     }
                 }
             }

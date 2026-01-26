@@ -215,15 +215,17 @@ DefaultPage {
                     settings.rawLanguage = dialog.language;
                     settings.currentParticipantId = dialog.participant;
 
-                    var form = {
-                        name: dialog.group.name,
-                        information: dialog.group.information || null,
-                        currencyCode: dialog.group.currencyCode,
-                        currency: currencyInfo.infoForCodes([dialog.group.currencyCode], settings.language)[0].symbol,
-                        participants: dialog.updatedParticipants,
-                    };
+                    if (dialog.groupChanged) {
+                        var form = {
+                            name: dialog.group.name,
+                            information: dialog.group.information || null,
+                            currencyCode: dialog.group.currencyCode,
+                            currency: currencyInfo.infoForCodes([dialog.group.currencyCode], settings.language)[0].symbol,
+                            participants: dialog.updatedParticipants,
+                        };
 
-                    spliit.updateGroup(group.id, form, settings.currentParticipantId);
+                        spliit.updateGroup(group.id, form, settings.currentParticipantId);
+                    }
                 });
             }
         }

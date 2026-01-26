@@ -39,7 +39,7 @@ Paid for unknown participant</extracomment>
     <message id="global.cancel">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="34"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="14"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="22"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="24"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
@@ -180,17 +180,17 @@ Paid for unknown participant</extracomment>
         <translation>Nastavení</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="233"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="235"/>
         <source>Add expense</source>
         <translation>Přidat výdaj</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="260"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="262"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>No podívejme se na to, žádné výdaje! Proč nějaký nevytvoříte?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="279"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="281"/>
         <source>Update expense</source>
         <translation>Upravit výdaj</translation>
     </message>
@@ -273,58 +273,58 @@ Paid for unknown participant</extracomment>
         <translation>Zvolte účastníka</translation>
     </message>
     <message id="global.save">
-        <location filename="../qml/pages/SettingsDialog.qml" line="20"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="22"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
     <message id="settings.section.app">
-        <location filename="../qml/pages/SettingsDialog.qml" line="29"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="31"/>
         <source>App Settings</source>
         <translation>Nastavení aplikace</translation>
     </message>
     <message id="settings.language.auto">
-        <location filename="../qml/pages/SettingsDialog.qml" line="36"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="38"/>
         <source>Automatic</source>
         <extracomment>As in automatic language selection</extracomment>
         <translation>Automaticky</translation>
     </message>
     <message id="settings.language.label">
-        <location filename="../qml/pages/SettingsDialog.qml" line="44"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="46"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message id="settings.current_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="70"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="72"/>
         <source>Active user</source>
         <translation>Aktivní uživatel</translation>
     </message>
     <message id="settings.section.group">
-        <location filename="../qml/pages/SettingsDialog.qml" line="89"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="91"/>
         <source>Group Settings</source>
         <translation>Nastavení skupiny</translation>
     </message>
     <message id="settings.group_name">
-        <location filename="../qml/pages/SettingsDialog.qml" line="95"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="97"/>
         <source>Group name</source>
         <translation>Název skupiny</translation>
     </message>
     <message id="settings.currency">
-        <location filename="../qml/pages/SettingsDialog.qml" line="107"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="110"/>
         <source>Main currency</source>
         <translation>Hlavní měna</translation>
     </message>
     <message id="settings.group_information">
-        <location filename="../qml/pages/SettingsDialog.qml" line="128"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="132"/>
         <source>Group information</source>
         <translation>Informace o skupině</translation>
     </message>
     <message id="settings.participants">
-        <location filename="../qml/pages/SettingsDialog.qml" line="141"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="146"/>
         <source>Participants</source>
         <translation>Účastníci</translation>
     </message>
     <message id="settings.add_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="179"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="186"/>
         <source>Add participant</source>
         <translation>Přidat účastníka</translation>
     </message>
