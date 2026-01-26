@@ -64,54 +64,59 @@ Paid for unknown participant</extracomment>
         <source>Warning: This expense is in a non-default currency, this app does not support it yet. Please don&apos;t save anything.</source>
         <translation>Varování: Tento výdaj není ve výchozí měně, což tato aplikace zatím nepodporuje. Neukládejte nic.</translation>
     </message>
+    <message id="add_expense.error.unsupported_split_mode">
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="105"/>
+        <source>Warning: This item uses a split mode that&apos;s currently not supported by the app. If you save this item, the split mode will be changed to even shares.</source>
+        <translation>Varování: Tato položka používá režim rozložení, který tato aplikace nepodpouje. Pokud tuto položku uložíte, přepne se do režimu rovnoměrného rozložení.</translation>
+    </message>
     <message id="add_expense.field.name">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="133"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="137"/>
         <source>Title</source>
         <extracomment>Title of the expense</extracomment>
         <translation>Název výdaje</translation>
     </message>
     <message id="add_expense.field.date">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="138"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="142"/>
         <source>Expense date</source>
         <translation>Datum výdaje</translation>
     </message>
     <message id="add_expense.field.category">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="153"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="157"/>
         <source>Category</source>
         <translation>Kategorie</translation>
     </message>
     <message id="add_expense.field.currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="168"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="172"/>
         <source>Currency</source>
         <translation>Měna výdaje</translation>
     </message>
     <message id="add_expense.field.amount">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="190"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="194"/>
         <source>Amount (%1)</source>
         <translation>Částka (%1)</translation>
     </message>
     <message id="add_expense.field.amount_no_currency">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="192"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="196"/>
         <source>Amount</source>
         <translation>Částka</translation>
     </message>
     <message id="add_expense.field.is_reimbursement">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="199"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="203"/>
         <source>This is a reimbursement</source>
         <translation>Toto je proplacení</translation>
     </message>
     <message id="add_expense.field.paid_by">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="204"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="208"/>
         <source>Paid by</source>
         <translation>Zaplatil/a</translation>
     </message>
     <message id="add_expense.field.notes">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="222"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="226"/>
         <source>Notes</source>
         <translation>Poznámky</translation>
     </message>
     <message id="add_expense.label.paid_for">
-        <location filename="../qml/pages/AddExpenseDialog.qml" line="228"/>
+        <location filename="../qml/pages/AddExpenseDialog.qml" line="232"/>
         <source>Paid for</source>
         <translation>Zaplaceno za</translation>
     </message>

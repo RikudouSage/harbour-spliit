@@ -259,5 +259,9 @@ Paid for unknown participant</extracomment>
         <source>Failed updating group: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="add_expense.error.unsupported_split_mode">
+        <source>Warning: This item uses a split mode that&apos;s currently not supported by the app. If you save this item, the split mode will be changed to even shares.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

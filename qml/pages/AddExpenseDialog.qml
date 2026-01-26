@@ -100,6 +100,10 @@ DefaultDialog {
                 //% "Warning: This expense is in a non-default currency, this app does not support it yet. Please don't save anything."
                 notificationStack.push(qsTrId("add_expense.error.unsupported_multi_currency"), true);
             }
+            if (expense.splitMode !== 'EVENLY') {
+                //% "Warning: This item uses a split mode that's currently not supported by the app. If you save this item, the split mode will be changed to even shares."
+                notificationStack.push(qsTrId("add_expense.error.unsupported_split_mode"), true);
+            }
 
             var amount = Strings.leftPad(String(expense.amount), 3, '0');
             amount = Strings.insertAt(amount, ".", -2);
