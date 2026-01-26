@@ -3,10 +3,13 @@ import Sailfish.Silica 1.0
 
 import "pages"
 import "components"
+import "cover"
 
 ApplicationWindow {
+    id: app
+
     initialPage: Component { InitialPage { } }
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    cover: CoverPage {}
     allowedOrientations: defaultAllowedOrientations
 
     NotificationStack {

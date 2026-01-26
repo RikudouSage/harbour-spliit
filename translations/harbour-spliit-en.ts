@@ -113,43 +113,43 @@
         <translation>Creating the expense failed: %1</translation>
     </message>
     <message id="add_group.error.fetch_more">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="121"/>
-        <location filename="../qml/pages/GroupDetailPage.qml" line="129"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="122"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="130"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
     </message>
     <message id="group_detail.error.updating_failed">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="155"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="156"/>
         <source>Updating the item failed: %1</source>
         <translation>Updating the item failed: %1</translation>
     </message>
     <message id="group_detail.error.group_update">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="189"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="190"/>
         <source>Failed updating group: %1</source>
         <translation>Failed updating group: %1</translation>
     </message>
     <message id="group_detail.change_group">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="198"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="199"/>
         <source>Change group</source>
         <translation>Change group</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="207"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="208"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="232"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="233"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="259"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="260"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="278"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="279"/>
         <source>Update expense</source>
         <translation>Update expense</translation>
     </message>

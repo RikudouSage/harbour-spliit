@@ -113,6 +113,7 @@ DefaultPage {
             }
 
             group = response.group;
+            app.cover.currentGroupName = group.name;
             fetchMore();
         }
 

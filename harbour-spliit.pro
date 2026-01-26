@@ -42,7 +42,10 @@ SOURCES += src/harbour-spliit.cpp \
 libspliit.path = /usr/share/harbour-spliit/lib
 libspliit.files = lib/*.so
 
-INSTALLS += libspliit
+icons.path = /usr/share/harbour-spliit/icons
+icons.files = icons/bare.png
+
+INSTALLS += libspliit icons
 
 DISTFILES += qml/harbour-spliit.qml \
     qml/components/DefaultDialog.qml \
