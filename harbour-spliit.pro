@@ -48,6 +48,7 @@ icons.files = icons/bare.png
 INSTALLS += libspliit icons
 
 DISTFILES += qml/harbour-spliit.qml \
+    qml/components/Chart.qml \
     qml/components/DefaultDialog.qml \
     qml/components/DefaultPage.qml \
     qml/components/ExpenseRow.qml \
@@ -61,6 +62,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/js/strings.js \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
+    qml/pages/BalancesPage.qml \
     qml/pages/GroupDetailPage.qml \
     qml/pages/GroupSelectorPage.qml \
     qml/pages/InitialPage.qml \

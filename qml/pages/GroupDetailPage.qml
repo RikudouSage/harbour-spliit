@@ -115,6 +115,13 @@ DefaultPage {
             group = response.group;
             app.cover.currentGroupName = group.name;
             fetchMore();
+
+            safeCall(function() {
+                pageStack.pushAttached("BalancesPage.qml", {
+                    participants: Arrays.objectify(group.participants, "id"),
+                    currencyCode: group.currencyCode || group.currency,
+                });
+            });
         }
 
         onExpenseListFailed: {

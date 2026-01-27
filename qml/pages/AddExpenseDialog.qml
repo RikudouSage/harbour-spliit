@@ -105,11 +105,8 @@ DefaultDialog {
                 notificationStack.push(qsTrId("add_expense.error.unsupported_split_mode"), true);
             }
 
-            var amount = Strings.leftPad(String(expense.amount), 3, '0');
-            amount = Strings.insertAt(amount, ".", -2);
-
             name = expense.title;
-            page.amount = amount;
+            amount = Currencies.parseCentsToAmount(expense.amount);
             date = new Date(expense.expenseDate);
             categoryId = expense.category.id;
             paidBy = expense.paidBy.id;
