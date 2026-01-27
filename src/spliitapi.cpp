@@ -181,6 +181,20 @@ void SpliitApi::updateGroup(const QString &groupId, const QVariantMap &request, 
     );
 }
 
+void SpliitApi::getBalances(const QString &groupId)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+
+    runRequest(
+        "groups.balances.list",
+        input,
+        "Invalid JSON when listing balances",
+        [this](const QJsonObject &response) {emit balancesFetched(response);},
+        [this](const QString &error) {emit balanceFetchingFailed(error);}
+    );
+}
+
 void SpliitApi::runRequest(
     const QString &endpoint,
     const QJsonObject &input,

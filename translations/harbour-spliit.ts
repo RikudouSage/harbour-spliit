@@ -263,5 +263,17 @@ Paid for unknown participant</extracomment>
         <source>Warning: This item uses a split mode that&apos;s currently not supported by the app. If you save this item, the split mode will be changed to even shares.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="balances.title">
+        <source>Balances</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.error.fetching">
+        <source>Failed fetching list of balances: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.description">
+        <source>This is the amount that each participant paid or was paid for.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

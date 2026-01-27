@@ -1,3 +1,5 @@
+.import "strings.js" as Strings
+
 function get(locale) {
     return currencyInfo.infoForCodes(currencyInfo.allCurrencyCodes(), locale);
 }
@@ -16,6 +18,13 @@ function getAsMap(locale) {
     }
 
     return result;
+}
+
+function parseCentsToAmount(input) {
+    var amount = Strings.leftPad(String(input), 3, '0');
+    amount = Strings.insertAt(amount, ".", -2);
+
+    return amount;
 }
 
 function parseAmountToCents(input) {
