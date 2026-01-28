@@ -5,6 +5,7 @@ import "../components"
 import "../js/arrays.js" as Arrays
 import "../js/strings.js" as Strings
 import "../js/currencies.js" as Currencies
+import "../js/forms.js" as Forms
 
 DefaultPage {
     readonly property int limit: 40
@@ -41,23 +42,7 @@ DefaultPage {
     }
 
     function createFormFromDialog(dialog) {
-        return {
-            expenseDate: dialog.date.toISOString(),
-            title: dialog.name,
-            category: dialog.categoryId,
-            amount: Currencies.parseAmountToCents(dialog.amount),
-            paidBy: dialog.paidBy,
-            paidFor: dialog.paidFor.map(function(id) {
-                return {
-                    participant: id,
-                    shares: 100,
-                };
-            }),
-            splitMode: "EVENLY",
-            isReimbursement: dialog.isReimbursement,
-            notes: dialog.notes,
-            recurrenceRule: "NONE",
-        };
+        return Forms.expenseFormFromDialog(dialog)
     }
 
     id: page
@@ -250,7 +235,7 @@ DefaultPage {
                 });
                 dialog.accepted.connect(function() {
                     loading = true;
-                    const form = page.createFormFromDialog(dialog);
+                    const form = createFormFromDialog(dialog);
                     spliit.createExpense(group.id, form, settings.currentParticipantId);
                 });
             }

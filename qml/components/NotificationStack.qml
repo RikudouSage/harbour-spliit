@@ -19,7 +19,7 @@ Item {
     }
 
     function push(message, error) {
-        notifications.append({ text: message, error: error })
+        notifications.append({ text: message, error: !!error })
     }
 
     Column {

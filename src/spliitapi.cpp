@@ -86,7 +86,7 @@ void SpliitApi::getCategories()
     );
 }
 
-void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request, const QString &participantId)
+void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request, const QString &participantId, const QString &requestId)
 {
     auto form = QJsonObject::fromVariantMap(request);
     QJsonObject input;
@@ -100,10 +100,10 @@ void SpliitApi::createExpense(const QString &groupId, const QVariantMap &request
         "groups.expenses.create",
         input,
         "Invalid JSON when creating expense",
-        [this](const QJsonObject &response) {
-            emit expenseCreated(response.value("expenseId").toString());
+        [this, requestId](const QJsonObject &response) {
+            emit expenseCreated(response.value("expenseId").toString(), requestId);
         },
-        [this](const QString &error) {emit expenseCreationFailed(error);}
+        [this, requestId](const QString &error) {emit expenseCreationFailed(error, requestId);}
     );
 }
 
