@@ -186,7 +186,11 @@
         <source>Unknown</source>
         <extracomment>Paid by unknown participant
 ----------
-Paid for unknown participant</extracomment>
+Paid for unknown participant
+----------
+Unknown participant owes money
+----------
+Unknown participant is owed money</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message id="expense_row.paid_by_for_label">
@@ -273,6 +277,31 @@ Paid for unknown participant</extracomment>
     </message>
     <message id="balances.description">
         <source>This is the amount that each participant paid or was paid for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.reimbursements">
+        <source>Suggested reimbursements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.reimbursements.owing_text">
+        <source>&lt;strong&gt;%1&lt;/strong&gt; owes &lt;strong&gt;%2&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.reimbursements.add_expense_name">
+        <source>Reimbursement</source>
+        <extracomment>The name of a new expense when created from the &quot;Mark as paid&quot; button on the balances/reimbursements page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.reimbursement_created">
+        <source>The reimbursement has been successfully created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.reimbursement_create_failed">
+        <source>Creating the reimbursement failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.no_balances">
+        <source>Nobody owes anyone anything—isn&apos;t that nice? But it also means there&apos;s nothing to display on this page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

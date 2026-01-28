@@ -14,6 +14,7 @@ DefaultDialog {
     property var categories: ({})
     property var participants: ({})
     property var currencyDetail
+    property var initialPaidFor: []
 
     property string groupId: ''
     property string expenseId: ''
@@ -267,9 +268,13 @@ DefaultDialog {
                 currency = "EUR";
             }
 
-            paidFor = Objects.values(participants).map(function(participant) {
-                return participant.id;
-            });
+            if (initialPaidFor.length) {
+                paidFor = initialPaidFor;
+            } else {
+                paidFor = Objects.values(participants).map(function(participant) {
+                    return participant.id;
+                });
+            }
         }
     }
 }

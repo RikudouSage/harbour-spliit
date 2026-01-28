@@ -19,7 +19,7 @@ public:
     Q_INVOKABLE void getGroups(const QStringList &groupIds);
     Q_INVOKABLE void listExpenses(const QString &groupId, int cursor, int limit);
     Q_INVOKABLE void getCategories();
-    Q_INVOKABLE void createExpense(const QString &groupId, const QVariantMap &request, const QString &participantId);
+    Q_INVOKABLE void createExpense(const QString &groupId, const QVariantMap &request, const QString &participantId, const QString &requestId = "");
     Q_INVOKABLE void deleteExpense(const QString &groupId, const QString &expenseId, const QString &participantId);
     Q_INVOKABLE void getExpense(const QString &groupId, const QString &expenseId);
     Q_INVOKABLE void updateExpense(const QString &groupId, const QString &expenseId, const QVariantMap &request, const QString &participantId);
@@ -34,8 +34,8 @@ signals:
     void expenseListResult(const QJsonObject &response);
     void categoryFetchingFailed(const QString &error);
     void categoriesFetched(const QJsonObject &response);
-    void expenseCreated(const QString &expenseId);
-    void expenseCreationFailed(const QString &error);
+    void expenseCreated(const QString &expenseId, const QString &requestId);
+    void expenseCreationFailed(const QString &error, const QString &requestId);
     void expenseDeleted(const QString &id);
     void expenseDeleteFailed(const QString &id, const QString &error);
     void expenseFetched(const QJsonObject &response);

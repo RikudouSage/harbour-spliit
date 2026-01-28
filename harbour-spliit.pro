@@ -58,6 +58,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/cover/CoverPage.qml \
     qml/js/arrays.js \
     qml/js/currencies.js \
+    qml/js/forms.js \
     qml/js/objects.js \
     qml/js/strings.js \
     qml/pages/AddExpenseDialog.qml \

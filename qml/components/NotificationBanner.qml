@@ -21,7 +21,7 @@ Item {
             rightMargin: _margin
         }
         radius: Theme.paddingSmall
-        color: root.error ? Theme.errorColor : Theme.highlightBackgroundColor
+        color: root.error ? Theme.errorColor : '#1B5E20'
         height: contentRow.height + Theme.paddingMedium * 2
         opacity: 1.0
 
@@ -46,7 +46,7 @@ Item {
                 id: textLabel
                 width: parent.width - closeButton.width - Theme.paddingLarge
                 wrapMode: Text.WordWrap
-                color: Theme.primaryColor
+                color: root.error ? Theme.primaryColor : '#ffffff'
             }
         }
     }
