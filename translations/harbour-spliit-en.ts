@@ -29,45 +29,61 @@
         <translation>The initialization of the app failed. There&apos;s not much you can do about it except contacting the developer.</translation>
     </message>
     <message id="group_selector.title">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="10"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="11"/>
         <source>Select a Group</source>
         <translation>Select a Group</translation>
     </message>
     <message id="group_selector.failed_fetching">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="31"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="36"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="32"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="37"/>
         <source>Failed fetching list of groups, please  try again later.</source>
         <translation>Failed fetching list of groups, please  try again later.</translation>
     </message>
     <message id="group_selector.create_group">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="57"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="58"/>
         <source>Create group</source>
         <translation>Create group</translation>
     </message>
     <message id="group_selector.add_group">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="65"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="66"/>
         <source>Select existing group</source>
         <oldsource>Add a group</oldsource>
         <translation>Select existing group</translation>
     </message>
     <message id="group_selector.invalid_group_provided">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="71"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="72"/>
         <source>Invalid group provided.</source>
         <translation>Invalid group provided.</translation>
     </message>
     <message id="group_selector.no_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="89"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="90"/>
         <source>There are no groups saved. You can use the pull-down menu to add a new one.</source>
         <translation>There are no groups saved. You can use the pull-down menu to add a new one.</translation>
     </message>
     <message id="group_selector.stored_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="95"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="96"/>
         <source>Saved Groups</source>
         <translation>Saved Groups</translation>
     </message>
+    <message id="group_selector.share_group_url">
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="151"/>
+        <source>Share URL</source>
+        <translation>Share URL</translation>
+    </message>
+    <message id="group_selector.share_group.title">
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="165"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="166"/>
+        <source>Spliit group %1</source>
+        <translation>Spliit group %1</translation>
+    </message>
+    <message id="group_selector.share_group.sharer_title">
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="169"/>
+        <source>Share group %1 link</source>
+        <translation>Share group %1 link</translation>
+    </message>
     <message id="global.remove">
         <location filename="../qml/components/ExpenseRow.qml" line="39"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="140"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="141"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -130,8 +146,9 @@
     </message>
     <message id="group_detail.change_group">
         <location filename="../qml/pages/GroupDetailPage.qml" line="191"/>
-        <source>Change group</source>
-        <translation>Change group</translation>
+        <source>Groups</source>
+        <oldsource>Change group</oldsource>
+        <translation>Groups</translation>
     </message>
     <message id="global.settings">
         <location filename="../qml/pages/GroupDetailPage.qml" line="200"/>

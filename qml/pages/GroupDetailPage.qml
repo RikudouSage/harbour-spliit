@@ -187,7 +187,7 @@ DefaultPage {
     PullDownMenu {
         visible: !loading
         MenuItem {
-            //% "Change group"
+            //% "Groups"
             text: qsTrId("group_detail.change_group")
             onClicked: {
                 errorLabel.text = "";
