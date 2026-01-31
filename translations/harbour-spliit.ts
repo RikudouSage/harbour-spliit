@@ -66,7 +66,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="group_detail.change_group">
-        <source>Change group</source>
+        <source>Groups</source>
+        <oldsource>Change group</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="global.remove">
@@ -302,6 +303,18 @@ Unknown participant is owed money</extracomment>
     </message>
     <message id="balances.no_balances">
         <source>Nobody owes anyone anything—isn&apos;t that nice? But it also means there&apos;s nothing to display on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.share_group_url">
+        <source>Share URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.share_group.title">
+        <source>Spliit group %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.share_group.sharer_title">
+        <source>Share group %1 link</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
