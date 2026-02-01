@@ -156,14 +156,17 @@ DefaultPage {
                          }
 
                          ShareAction {
+                            readonly property string url: "https://spliit.app/groups/" + item + "/expenses?ref=share"
+
                             id: sharer
                             mimeType: "text/x-url"
                             resources: [{
-                                "data": "https://spliit.app/groups/" + item + "/expenses?ref=share",
+                                "data": url,
                                 "type": sharer.mimeType,
                                 //% "Spliit group %1"
                                 "linkTitle": qsTrId("group_selector.share_group.title").arg(visible ? groupNames[item] : ''),
-                                "name": qsTrId("group_selector.share_group.title").arg(visible ? groupNames[item] : '') + ".url"
+                                "name": qsTrId("group_selector.share_group.title").arg(visible ? groupNames[item] : '') + ".url",
+                                "status": url, // whisperfish expects it in this field because... reasons
                             }]
                             //% "Share group %1 link"
                             title: qsTrId("group_selector.share_group.sharer_title").arg(visible ? groupNames[item] : '')
