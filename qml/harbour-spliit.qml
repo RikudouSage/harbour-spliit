@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.Share 1.0
 
 import "pages"
 import "components"
@@ -19,6 +20,20 @@ ApplicationWindow {
             right: parent.right
             top: parent.top
             topMargin: Theme.paddingLarge * 3
+        }
+    }
+
+    ShareProvider {
+        method: "url"
+        capabilities: ["text/x-url"]
+
+        onTriggered: {
+            var resource = resources[0];
+            if (resource.type !== ShareResource.StringDataType) {
+                return;
+            }
+
+            Clipboard.text = resource.data;
         }
     }
 }

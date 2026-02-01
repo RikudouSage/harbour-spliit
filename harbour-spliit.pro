@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-spliit
 
-QT += concurrent
+QT += concurrent dbus
 
 harbour_store {
     DEFINES += ICU_DYNAMIC
