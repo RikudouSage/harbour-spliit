@@ -71,13 +71,13 @@
         <translation>Share URL</translation>
     </message>
     <message id="group_selector.share_group.title">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="165"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="166"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="167"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="168"/>
         <source>Spliit group %1</source>
         <translation>Spliit group %1</translation>
     </message>
     <message id="group_selector.share_group.sharer_title">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="169"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="172"/>
         <source>Share group %1 link</source>
         <translation>Share group %1 link</translation>
     </message>
