@@ -10,6 +10,7 @@
 #include <QLocale>
 #include <QDebug>
 #include <QTranslator>
+#include <QDBusConnection>
 
 #include <sailfishapp.h>
 
@@ -57,6 +58,7 @@ int main(int argc, char *argv[])
 #endif
 
     view->setSource(SailfishApp::pathToMainQml());
+    QDBusConnection::sessionBus().registerService("dev.chrastecky.Spliit");
     view->show();
 
     return app->exec();

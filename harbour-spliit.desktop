@@ -4,8 +4,15 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-spliit
 Exec=harbour-spliit
 Name=Spliit
+X-Share-Methods=url;
 
 [X-Sailjail]
 OrganizationName=dev.chrastecky
 ApplicationName=Spliit
 Permissions=Internet
+
+[X-Share Method url]
+Description=Copy URL to clipboard
+Description[cs]=Zkopírovat URL do schránky
+Capabilities=text/x-url
+SupportsMultipleFiles=no
