@@ -149,34 +149,23 @@ DefaultDialog {
                 Repeater {
                     model: updatedParticipants
 
-                    delegate: Row {
-                        width: parent.width - Theme.horizontalPageMargin
-                        spacing: Theme.paddingSmall
+                    delegate: ParticipantRow {
+                        name: modelData.name
 
-                        TextField {
-                            text: modelData.name
-                            width: parent.width - parent.spacing - removeButton.width
-
-                            onTextChanged: {
-                                if (modelData.name === text) {
-                                    return;
-                                }
-                                modelData.name = text;
-                                updatedParticipants[index].name = text;
-                                groupChanged = true;
+                        onNameChanged: {
+                            if (modelData.name === name) {
+                                return;
                             }
+                            modelData.name = name;
+                            updatedParticipants[index].name = name;
+                            groupChanged = true;
                         }
-                        IconButton {
-                            id: removeButton
-                            icon.source: "image://theme/icon-m-remove"
-                            icon.color: Theme.errorColor
 
-                            onClicked: {
-                                var modelCopy = updatedParticipants;
-                                modelCopy.splice(index, 1);
-                                updatedParticipants = modelCopy;
-                                groupChanged = true;
-                            }
+                        onRemoveButtonClicked: {
+                            var modelCopy = updatedParticipants;
+                            modelCopy.splice(index, 1);
+                            updatedParticipants = modelCopy;
+                            groupChanged = true;
                         }
                     }
                 }

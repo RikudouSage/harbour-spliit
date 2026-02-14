@@ -50,6 +50,16 @@ DefaultPage {
 
             loading = false;
         }
+
+        onGroupCreated: {
+            settings.storedGroups.push(groupId);
+        }
+
+        onGroupCreationFailed: {
+            //% "There was an error creating the group: %1"
+            notificationStack.push(qsTrId("group_selector.error.add_group").arg(error), true);
+            loading = false;
+        }
     }
 
     PullDownMenu {
@@ -57,7 +67,11 @@ DefaultPage {
             //% "Create group"
             text: qsTrId("group_selector.create_group")
             onClicked: {
-                Qt.openUrlExternally("https://spliit.app/groups/create")
+                const dialog = pageStack.push("CreateGroupDialog.qml");
+                dialog.accepted.connect(function() {
+                    loading = true;
+                    spliit.createGroup(dialog.group);
+                });
             }
         }
 
@@ -105,12 +119,15 @@ DefaultPage {
 
             function remove() {
                 remorseDelete(function() {
-                    settings.storedGroups = settings.storedGroups.filter(function(testedItem) {
+                    var settingsCopy = settings;
+                    var pageStackCopy = pageStack;
+
+                    settingsCopy.storedGroups = settingsCopy.storedGroups.filter(function(testedItem) {
                         return testedItem !== item;
                     });
-                    if (settings.currentGroupId === item) {
-                        settings.currentGroupId = "";
-                        pageStack.replace("InitialPage.qml");
+                    if (settingsCopy.currentGroupId === item) {
+                        settingsCopy.currentGroupId = "";
+                        pageStackCopy.replace("InitialPage.qml");
                     }
                 });
             }

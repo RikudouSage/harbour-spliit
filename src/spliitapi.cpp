@@ -195,6 +195,20 @@ void SpliitApi::getBalances(const QString &groupId)
     );
 }
 
+void SpliitApi::createGroup(const QVariantMap &request)
+{
+    QJsonObject input;
+    input.insert("groupFormValues", QJsonObject::fromVariantMap(request));
+
+    runRequest(
+        "groups.create",
+        input,
+        "Invalid JSON when creating group",
+        [this](const QJsonObject &response) {emit groupCreated(response.value("groupId").toString());},
+        [this](const QString &error) {emit groupCreationFailed(error);}
+    );
+}
+
 void SpliitApi::runRequest(
     const QString &endpoint,
     const QJsonObject &input,

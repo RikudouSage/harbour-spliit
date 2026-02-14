@@ -54,6 +54,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/ExpenseRow.qml \
     qml/components/NotificationBanner.qml \
     qml/components/NotificationStack.qml \
+    qml/components/ParticipantRow.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
     qml/js/arrays.js \
@@ -64,6 +65,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
     qml/pages/BalancesPage.qml \
+    qml/pages/CreateGroupDialog.qml \
     qml/pages/GroupDetailPage.qml \
     qml/pages/GroupSelectorPage.qml \
     qml/pages/InitialPage.qml \
