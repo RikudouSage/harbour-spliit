@@ -317,5 +317,13 @@ Unknown participant is owed money</extracomment>
         <source>Share group %1 link</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="global.create">
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_selector.error.add_group">
+        <source>There was an error creating the group: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

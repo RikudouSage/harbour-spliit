@@ -45,6 +45,7 @@ Unknown participant is owed money</extracomment>
     <message id="global.cancel">
         <location filename="../qml/pages/AddExpenseDialog.qml" line="35"/>
         <location filename="../qml/pages/AddGroupDialog.qml" line="14"/>
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="24"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="24"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
@@ -217,51 +218,56 @@ Unknown participant is owed money</extracomment>
         <source>Failed fetching list of groups, please  try again later.</source>
         <translation>Nezdařilo se získat seznam skupin, zkuste to prosím znovu později.</translation>
     </message>
+    <message id="group_selector.error.add_group">
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="60"/>
+        <source>There was an error creating the group: %1</source>
+        <translation>Nastala chyba při vytváření skupiny: %1</translation>
+    </message>
     <message id="group_selector.create_group">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="58"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="68"/>
         <source>Create group</source>
         <translation>Vytvořit skupinu</translation>
     </message>
     <message id="group_selector.add_group">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="66"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="80"/>
         <source>Select existing group</source>
         <oldsource>Add a group</oldsource>
         <translation>Zvolit existující skupinu</translation>
     </message>
     <message id="group_selector.invalid_group_provided">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="72"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="86"/>
         <source>Invalid group provided.</source>
         <translation>Byla zadána neplatná skupina.</translation>
     </message>
     <message id="group_selector.no_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="90"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="104"/>
         <source>There are no groups saved. You can use the pull-down menu to add a new one.</source>
         <translation>Nemáte uloženy žádné skupiny. Použijte stahovací menu a jednu přidejte.</translation>
     </message>
     <message id="group_selector.stored_groups">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="96"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="110"/>
         <source>Saved Groups</source>
         <translation>Uložené skupiny</translation>
     </message>
     <message id="group_selector.share_group_url">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="151"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="168"/>
         <source>Share URL</source>
         <translation>Sdílet URL</translation>
     </message>
     <message id="group_selector.share_group.title">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="167"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="168"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="184"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="185"/>
         <source>Spliit group %1</source>
         <translation>Spliit skupina %1</translation>
     </message>
     <message id="group_selector.share_group.sharer_title">
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="172"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="189"/>
         <source>Share group %1 link</source>
         <translation>Sdílet odkaz na skupinu %1</translation>
     </message>
     <message id="global.remove">
         <location filename="../qml/components/ExpenseRow.qml" line="39"/>
-        <location filename="../qml/pages/GroupSelectorPage.qml" line="141"/>
+        <location filename="../qml/pages/GroupSelectorPage.qml" line="158"/>
         <source>Remove</source>
         <translation>Odstranit</translation>
     </message>
@@ -331,28 +337,38 @@ Unknown participant is owed money</extracomment>
         <source>Group Settings</source>
         <translation>Nastavení skupiny</translation>
     </message>
+    <message id="global.create">
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="22"/>
+        <source>Create</source>
+        <translation>Vytvořit</translation>
+    </message>
     <message id="settings.group_name">
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="33"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="97"/>
         <source>Group name</source>
         <translation>Název skupiny</translation>
     </message>
     <message id="settings.currency">
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="45"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="110"/>
         <source>Main currency</source>
         <translation>Hlavní měna</translation>
     </message>
     <message id="settings.group_information">
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="67"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="132"/>
         <source>Group information</source>
         <translation>Informace o skupině</translation>
     </message>
     <message id="settings.participants">
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="80"/>
         <location filename="../qml/pages/SettingsDialog.qml" line="146"/>
         <source>Participants</source>
         <translation>Účastníci</translation>
     </message>
     <message id="settings.add_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="186"/>
+        <location filename="../qml/pages/CreateGroupDialog.qml" line="107"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="175"/>
         <source>Add participant</source>
         <translation>Přidat účastníka</translation>
     </message>
