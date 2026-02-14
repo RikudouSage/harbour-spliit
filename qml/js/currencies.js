@@ -22,7 +22,13 @@ function getAsMap(locale) {
 
 function parseCentsToAmount(input) {
     var amount = Strings.leftPad(String(input), 3, '0');
-    amount = Strings.insertAt(amount, ".", -2);
+    var startPosition = 0;
+    if (amount.indexOf(".") > -1) {
+        startPosition = amount.indexOf(".");
+        amount = amount.replace(/\./g, '');
+    }
+
+    amount = Strings.insertAt(amount, ".", startPosition - 2);
 
     return amount;
 }
