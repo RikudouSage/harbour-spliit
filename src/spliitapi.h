@@ -25,6 +25,7 @@ public:
     Q_INVOKABLE void updateExpense(const QString &groupId, const QString &expenseId, const QVariantMap &request, const QString &participantId);
     Q_INVOKABLE void updateGroup(const QString &groupId, const QVariantMap &request, const QString &participantId);
     Q_INVOKABLE void getBalances(const QString &groupId);
+    Q_INVOKABLE void getStats(const QString &groupId, const QString &participantId);
     Q_INVOKABLE void createGroup(const QVariantMap &request);
 
 signals:
@@ -47,6 +48,8 @@ signals:
     void groupUpdateFailed(const QString &error);
     void balancesFetched(const QJsonObject &response);
     void balanceFetchingFailed(const QString &error);
+    void statsFetched(const QJsonObject &response);
+    void statsFetchingFailed(const QString &error);
     void groupCreated(const QString &groupId);
     void groupCreationFailed(const QString &error);
 

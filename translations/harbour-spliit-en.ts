@@ -347,8 +347,8 @@
     <message id="participant.unknown">
         <location filename="../qml/components/ExpenseRow.qml" line="10"/>
         <location filename="../qml/components/ExpenseRow.qml" line="15"/>
-        <location filename="../qml/pages/BalancesPage.qml" line="151"/>
-        <location filename="../qml/pages/BalancesPage.qml" line="156"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="159"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="164"/>
         <source>Unknown</source>
         <extracomment>Paid by unknown participant
 ----------
@@ -377,50 +377,76 @@ Unknown participant is owed money</extracomment>
         <translation>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</translation>
     </message>
     <message id="balances.title">
-        <location filename="../qml/pages/BalancesPage.qml" line="32"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="35"/>
         <source>Balances</source>
         <translation>Balances</translation>
     </message>
     <message id="balances.error.fetching">
-        <location filename="../qml/pages/BalancesPage.qml" line="39"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="42"/>
         <source>Failed fetching list of balances: %1</source>
         <translation>Failed fetching list of balances: %1</translation>
     </message>
+    <message id="balances.error.stats_fetching">
+        <location filename="../qml/pages/BalancesPage.qml" line="47"/>
+        <source>Failed fetching stats: %1</source>
+        <translation>Failed fetching stats: %1</translation>
+    </message>
     <message id="balances.reimbursement_created">
-        <location filename="../qml/pages/BalancesPage.qml" line="51"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="63"/>
         <source>The reimbursement has been successfully created.</source>
         <translation>The reimbursement has been successfully created.</translation>
     </message>
     <message id="balances.reimbursement_create_failed">
-        <location filename="../qml/pages/BalancesPage.qml" line="66"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="78"/>
         <source>Creating the reimbursement failed: %1</source>
         <translation>Creating the reimbursement failed: %1</translation>
     </message>
     <message id="balances.description">
-        <location filename="../qml/pages/BalancesPage.qml" line="87"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="99"/>
         <source>This is the amount that each participant paid or was paid for.</source>
         <translation>This is the amount that each participant paid or was paid for.</translation>
     </message>
     <message id="balances.no_balances">
-        <location filename="../qml/pages/BalancesPage.qml" line="93"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="105"/>
         <source>Nobody owes anyone anything—isn&apos;t that nice? But it also means there&apos;s nothing to display on this page.</source>
         <translation>Nobody owes anyone anything—isn&apos;t that nice? But it also means there&apos;s nothing to display on this page.</translation>
     </message>
     <message id="balances.reimbursements">
-        <location filename="../qml/pages/BalancesPage.qml" line="128"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="140"/>
         <source>Suggested reimbursements</source>
         <translation>Suggested reimbursements</translation>
     </message>
     <message id="balances.reimbursements.owing_text">
-        <location filename="../qml/pages/BalancesPage.qml" line="160"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="168"/>
         <source>&lt;strong&gt;%1&lt;/strong&gt; owes &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>&lt;strong&gt;%1&lt;/strong&gt; owes &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="balances.reimbursements.add_expense_name">
-        <location filename="../qml/pages/BalancesPage.qml" line="179"/>
+        <location filename="../qml/pages/BalancesPage.qml" line="187"/>
         <source>Reimbursement</source>
         <extracomment>The name of a new expense when created from the &quot;Mark as paid&quot; button on the balances/reimbursements page</extracomment>
         <translation>Reimbursement</translation>
+    </message>
+    <message id="balances.stats">
+        <location filename="../qml/pages/BalancesPage.qml" line="217"/>
+        <source>Stats</source>
+        <translation>Stats</translation>
+    </message>
+    <message id="balances.stats.total_spendings">
+        <location filename="../qml/pages/BalancesPage.qml" line="232"/>
+        <source>Total group spendings</source>
+        <translation>Total group spendings</translation>
+    </message>
+    <message id="balances.stats.total_spendings_participant">
+        <location filename="../qml/pages/BalancesPage.qml" line="242"/>
+        <source>Your total spendings</source>
+        <oldsource>Total participant spendings</oldsource>
+        <translation>Your total spendings</translation>
+    </message>
+    <message id="balances.stats.total_share_participant">
+        <location filename="../qml/pages/BalancesPage.qml" line="253"/>
+        <source>Your total share</source>
+        <translation>Your total share</translation>
     </message>
 </context>
 </TS>

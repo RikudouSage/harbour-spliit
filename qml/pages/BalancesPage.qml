@@ -5,6 +5,7 @@ import "../components"
 import "../js/objects.js" as Objects
 import "../js/currencies.js" as Currencies
 import "../js/forms.js" as Forms
+import "../js/strings.js" as Strings
 
 DefaultPage {
     readonly property string requestId: String(Math.random())
@@ -12,6 +13,7 @@ DefaultPage {
     property var balances: ({})
     property var reimbursements: []
     property var participants: ({})
+    property var stats: ({})
     property string currencyCode
     property string groupId: settings.currentGroupId
 
@@ -26,6 +28,7 @@ DefaultPage {
         }
 
         spliit.getBalances(groupId);
+        spliit.getStats(groupId, settings.currentParticipantId);
     }
 
     //% "Balances"
@@ -37,6 +40,15 @@ DefaultPage {
         onBalanceFetchingFailed: {
             //% "Failed fetching list of balances: %1"
             notificationStack.push(qsTrId("balances.error.fetching").arg(error), true)
+        }
+
+        onStatsFetchingFailed: {
+            //% "Failed fetching stats: %1"
+            notificationStack.push(qsTrId("balances.error.stats_fetching").arg(error), true)
+        }
+
+        onStatsFetched: {
+            stats = response;
         }
 
         onBalancesFetched: {
@@ -123,13 +135,9 @@ DefaultPage {
         width: parent.width
     }
 
-    StandardLabel {
+    SectionTitle {
         //% "Suggested reimbursements"
         text: qsTrId("balances.reimbursements")
-        font.bold: true
-        font.pixelSize: Theme.fontSizeLarge
-        horizontalAlignment: Text.AlignRight
-        color: Theme.highlightColor
         visible: reimbursements.length > 0
     }
 
@@ -196,6 +204,56 @@ DefaultPage {
                     || currencyInfo.formatNumber(amount, settings.language) + ' ' + currencyCode
                 anchors.verticalCenter: markAsPaidButton.verticalCenter
             }
+        }
+    }
+
+    Column {
+        width: parent.width
+        spacing: parent.spacing
+        visible: typeof stats.totalGroupSpendings !== 'undefined'
+
+        SectionTitle {
+            //% "Stats"
+            text: qsTrId("balances.stats")
+        }
+
+        Row {
+            x: Theme.horizontalPageMargin
+            spacing: Theme.paddingSmall
+            width: page.width - Theme.horizontalPageMargin * 2
+        }
+
+        TextValue {
+            property var amount: typeof stats.totalGroupSpendings === 'undefined'
+                                 ? 0
+                                 : Currencies.parseCentsToAmount(stats.totalGroupSpendings)
+
+            //% "Total group spendings"
+            label: qsTrId("balances.stats.total_spendings")
+            value: currencyInfo.formatCurrency(amount, currencyCode, settings.language)
+                   || currencyInfo.formatNumber(amount, settings.language) + ' ' + currencyCode
+        }
+
+        TextValue {
+            property var amount: typeof stats.totalGroupSpendings === 'undefined'
+                                 ? 0
+                                 : Currencies.parseCentsToAmount(stats.totalParticipantSpendings)
+            //% "Your total spendings"
+            label: qsTrId("balances.stats.total_spendings_participant")
+            value: currencyInfo.formatCurrency(amount, currencyCode, settings.language)
+                   || currencyInfo.formatNumber(amount, settings.language) + ' ' + currencyCode
+            visible: typeof stats.totalGroupSpendings !== 'undefined'
+        }
+
+        TextValue {
+            property var amount: typeof stats.totalParticipantShare === 'undefined'
+                                 ? 0
+                                 : Currencies.parseCentsToAmount(stats.totalParticipantShare)
+            //% "Your total share"
+            label: qsTrId("balances.stats.total_share_participant")
+            value: currencyInfo.formatCurrency(amount, currencyCode, settings.language)
+                   || currencyInfo.formatNumber(amount, settings.language) + ' ' + currencyCode
+            visible: typeof stats.totalParticipantShare !== 'undefined'
         }
     }
 

@@ -325,5 +325,26 @@ Unknown participant is owed money</extracomment>
         <source>There was an error creating the group: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="balances.error.stats_fetching">
+        <source>Failed fetching stats: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.stats">
+        <source>Stats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.stats.total_spendings">
+        <source>Total group spendings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.stats.total_spendings_participant">
+        <source>Your total spendings</source>
+        <oldsource>Total participant spendings</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="balances.stats.total_share_participant">
+        <source>Your total share</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

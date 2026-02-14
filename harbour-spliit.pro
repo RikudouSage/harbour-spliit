@@ -55,7 +55,9 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/components/NotificationBanner.qml \
     qml/components/NotificationStack.qml \
     qml/components/ParticipantRow.qml \
+    qml/components/SectionTitle.qml \
     qml/components/StandardLabel.qml \
+    qml/components/TextValue.qml \
     qml/cover/CoverPage.qml \
     qml/js/arrays.js \
     qml/js/currencies.js \

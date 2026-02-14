@@ -195,6 +195,23 @@ void SpliitApi::getBalances(const QString &groupId)
     );
 }
 
+void SpliitApi::getStats(const QString &groupId, const QString &participantId)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    if (participantId != "") {
+        input.insert("participantId", participantId);
+    }
+
+    runRequest(
+        "groups.stats.get",
+        input,
+        "Invalid JSON when getting stats",
+        [this](const QJsonObject &response) {emit statsFetched(response);},
+        [this](const QString &error) {emit statsFetchingFailed(error);}
+    );
+}
+
 void SpliitApi::createGroup(const QVariantMap &request)
 {
     QJsonObject input;
