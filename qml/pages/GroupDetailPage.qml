@@ -187,6 +187,17 @@ DefaultPage {
     PullDownMenu {
         visible: !loading
         MenuItem {
+            //% "Activities"
+            text: qsTrId("group_detail.activities")
+            onClicked: {
+                errorLabel.text = "";
+                pageStack.push("ActivitiesPage.qml", {
+                    participants: Arrays.objectify(group.participants, "id"),
+                });
+            }
+        }
+
+        MenuItem {
             //% "Groups"
             text: qsTrId("group_detail.change_group")
             onClicked: {

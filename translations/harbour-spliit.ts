@@ -346,5 +346,50 @@ Unknown participant is owed money</extracomment>
         <source>Your total share</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="activities.title">
+        <source>Activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activities.error.fetching">
+        <source>There was an error while fetching activities: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="group_detail.activities">
+        <source>Activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.update_group">
+        <source>Group was updated by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.create_expense.with_name">
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was created by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <oldsource>Expense &lt;i&gt;%1&lt;/i&gt; was created by &lt;strong&gt;%2&lt;/strong&gt;</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.create_expense.no_name">
+        <source>Expense was created by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.unknown">
+        <source>Unknown activity type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.update_expense.with_name">
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was updated by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.update_expense.no_name">
+        <source>Expense was updated by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.delete_expense.with_name">
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was deleted by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="activity.delete_expense.no_name">
+        <source>Expense was deleted by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

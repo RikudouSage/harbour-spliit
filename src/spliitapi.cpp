@@ -73,6 +73,22 @@ void SpliitApi::listExpenses(const QString &groupId, int cursor, int limit)
     );
 }
 
+void SpliitApi::listActivities(const QString &groupId, int cursor, int limit)
+{
+    QJsonObject input;
+    input.insert("groupId", groupId);
+    input.insert("cursor", cursor);
+    input.insert("limit", limit);
+
+    runRequest(
+        "groups.activities.list",
+        input,
+        "Invalid JSON in activities list response",
+        [this](const QJsonObject &response) {emit activityListResult(response);},
+        [this](const QString &error) {emit activityListFailed(error);}
+    );
+}
+
 void SpliitApi::getCategories()
 {
     QJsonObject input;
