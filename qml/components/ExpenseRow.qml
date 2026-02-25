@@ -3,29 +3,78 @@ import Sailfish.Silica 1.0
 
 ListItem {
     property var expense
-    readonly property bool reimbursement: expense.isReimbursement
-    readonly property string paidByName: expense.paidBy === null
+    readonly property bool reimbursement: expense && expense.isReimbursement
+    function formatAmount(amount) {
+        return currencyInfo.formatCurrency(amount, currencyCode, settings.language)
+            || (currencyInfo.formatNumber(amount, settings.language) + " " + currencyCode);
+    }
+    function participantIdForPaidForItem(item) {
+        if (!item) {
+            return "";
+        }
+        if (item.participant && item.participant.id) {
+            return item.participant.id;
+        }
+        if (item.participantId) {
+            return item.participantId;
+        }
+        if (typeof item.participant === "string") {
+            return item.participant;
+        }
+        return "";
+    }
+    readonly property string paidByName: !expense || !expense.paidBy
         //: Paid by unknown participant
         //% "Unknown"
         ? qsTrId("participant.unknown")
         : expense.paidBy.name
-    readonly property string paidForNames: expense.paidFor === null
+    readonly property string paidForNames: !expense || !expense.paidFor
         //: Paid for unknown participant
         //% "Unknown"
         ? qsTrId("participant.unknown")
         : expense.paidFor.map(function(item) {
-            return item.participant
+            return item && item.participant
                     ? item.participant.name
-                    : participants[item.participantId].name;
+                    : (participants[participantIdForPaidForItem(item)]
+                       ? participants[participantIdForPaidForItem(item)].name
+                       : qsTrId("participant.unknown"));
         }).join(', ')
 
     property var participants: ({})
-    property double balanceRaw: 0
     property string currentParticipantId: ""
     property string currencyCode: ""
-    property string balance: currencyInfo.formatCurrency(balanceRaw, currencyCode, settings.language)
-    property string balanceCalcLeft: '0'
-    property string balanceCalcRight: '0'
+    readonly property string paidByParticipantId: expense && (
+        (expense.paidBy && expense.paidBy.id)
+        ? expense.paidBy.id
+        : expense.paidById
+    )
+    readonly property bool paidByMe: !!currentParticipantId && !!paidByParticipantId && paidByParticipantId === currentParticipantId
+    readonly property bool paidForMe: !!currentParticipantId && !!expense && !!expense.paidFor && expense.paidFor.some(function(item) {
+        return participantIdForPaidForItem(item) === currentParticipantId;
+    })
+    readonly property bool participantInExpense: paidByMe || paidForMe
+    readonly property int paidForCount: expense && expense.paidFor ? expense.paidFor.length : 0
+    // TODO: implement correct balance math for non-even split modes and uneven shares.
+    readonly property bool hideBalanceCalculation: !!expense && (
+        (!!expense.splitMode && expense.splitMode !== "EVENLY")
+        || (!!expense.paidFor && expense.paidFor.length > 0 && expense.paidFor.some(function(item) {
+            return item && item.shares !== undefined && item.shares !== expense.paidFor[0].shares;
+        }))
+    )
+    readonly property double totalAmount: expense ? expense.amount / 100 : 0
+    readonly property double shareAmount: paidForCount > 0 ? totalAmount / paidForCount : 0
+    readonly property double balanceRaw: participantInExpense
+        ? ((paidByMe ? totalAmount : 0) - (paidForMe ? shareAmount : 0))
+        : 0
+    readonly property double balanceLeftAmount: participantInExpense
+        ? (paidByMe ? totalAmount : totalAmount)
+        : 0
+    readonly property double balanceRightAmount: participantInExpense
+        ? (paidByMe ? (paidForMe ? shareAmount : 0) : (paidForMe ? (totalAmount - shareAmount) : totalAmount))
+        : 0
+    readonly property string balance: participantInExpense ? formatAmount(balanceRaw) : ""
+    readonly property string balanceCalcLeft: participantInExpense ? formatAmount(balanceLeftAmount) : ""
+    readonly property string balanceCalcRight: participantInExpense ? formatAmount(balanceRightAmount) : ""
     property string groupId
     signal itemDeleted();
 
@@ -153,7 +202,7 @@ ListItem {
                 font.pixelSize: Theme.fontSizeSmall
                 font.italic: reimbursement
                 color: balanceRaw >= 0 ? Theme.highlightColor : Theme.errorColor
-                visible: currentParticipantId !== "" && balance !== ""
+                visible: participantInExpense && balance !== "" && !hideBalanceCalculation
             }
 
             Label {
@@ -170,36 +219,4 @@ ListItem {
         }
     }
 
-    onCurrentParticipantIdChanged: {
-        if (currentParticipantId) {
-            const paidByMe = expense.paidBy.id === currentParticipantId;
-
-            const paidByMeLeft = expense.amount / 100;
-            const paidByMeRight = expense.amount / 100 / expense.paidFor.length;
-            const notPaidByMeleft = expense.amount / 100;
-            const notPaidByMeRight = (expense.amount / 100 / expense.paidFor.length) * (expense.paidFor.length - 1);
-
-            if (paidByMe) {
-                balanceRaw = (expense.amount / 100) - (expense.amount / 100 / expense.paidFor.length);
-                balanceCalcLeft = currencyInfo.formatCurrency(paidByMeLeft, currencyCode, settings.language);
-                balanceCalcRight = currencyInfo.formatCurrency(paidByMeRight, currencyCode, settings.language);
-            } else {
-                balanceRaw = -(expense.amount / 100 / expense.paidFor.length);
-                balanceCalcLeft = currencyInfo.formatCurrency(notPaidByMeleft, currencyCode, settings.language);
-                balanceCalcRight = currencyInfo.formatCurrency(notPaidByMeRight, currencyCode, settings.language);
-            }
-
-            // custom currencies
-            if (balance === "") {
-                balance = currencyInfo.formatNumber(balanceRaw, settings.language) + " " + currencyCode;
-                if (paidByMe) {
-                    balanceCalcLeft = currencyInfo.formatNumber(paidByMeLeft, settings.language) + " " + currencyCode;
-                    balanceCalcRight = currencyInfo.formatNumber(paidByMeRight, settings.language) + " " + currencyCode;
-                } else {
-                    balanceCalcLeft = currencyInfo.formatNumber(notPaidByMeleft, settings.language) + " " + currencyCode;
-                    balanceCalcRight = currencyInfo.formatNumber(notPaidByMeRight, settings.language) + " " + currencyCode;
-                }
-            }
-        }
-    }
 }
