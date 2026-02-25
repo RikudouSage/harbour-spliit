@@ -87,7 +87,7 @@
         <translation>Share group %1 link</translation>
     </message>
     <message id="global.remove">
-        <location filename="../qml/components/ExpenseRow.qml" line="39"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="88"/>
         <location filename="../qml/pages/GroupSelectorPage.qml" line="158"/>
         <source>Remove</source>
         <translation>Remove</translation>
@@ -345,8 +345,9 @@
         <translation>Add participant</translation>
     </message>
     <message id="participant.unknown">
-        <location filename="../qml/components/ExpenseRow.qml" line="10"/>
-        <location filename="../qml/components/ExpenseRow.qml" line="15"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="29"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="34"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="40"/>
         <location filename="../qml/pages/BalancesPage.qml" line="159"/>
         <location filename="../qml/pages/BalancesPage.qml" line="164"/>
         <source>Unknown</source>
@@ -360,17 +361,17 @@ Unknown participant is owed money</extracomment>
         <translation>Unknown</translation>
     </message>
     <message id="expense_row.error.delete">
-        <location filename="../qml/components/ExpenseRow.qml" line="65"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="114"/>
         <source>Failed deleting the item: %1</source>
         <translation>Failed deleting the item: %1</translation>
     </message>
     <message id="expense_row.paid_by_for_label">
-        <location filename="../qml/components/ExpenseRow.qml" line="110"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="159"/>
         <source>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</source>
         <translation>Paid by &lt;strong&gt;%1&lt;/strong&gt; for &lt;strong&gt;%2&lt;/strong&gt;</translation>
     </message>
     <message id="expense_row.balance">
-        <location filename="../qml/components/ExpenseRow.qml" line="147"/>
+        <location filename="../qml/components/ExpenseRow.qml" line="196"/>
         <source>Your balance: &lt;strong&gt;%1&lt;/strong&gt; (%2 - %3)</source>
         <oldsource>Your balance: &lt;strong&gt;%1&lt;/strong&gt;</oldsource>
         <extracomment>Your balance: &lt;strong&gt;€ 2.00&lt;/strong&gt; (€3.00 - €1.00)</extracomment>
