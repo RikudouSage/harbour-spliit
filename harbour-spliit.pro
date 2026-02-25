@@ -64,6 +64,7 @@ DISTFILES += qml/harbour-spliit.qml \
     qml/js/forms.js \
     qml/js/objects.js \
     qml/js/strings.js \
+    qml/pages/ActivitiesPage.qml \
     qml/pages/AddExpenseDialog.qml \
     qml/pages/AddGroupDialog.qml \
     qml/pages/BalancesPage.qml \

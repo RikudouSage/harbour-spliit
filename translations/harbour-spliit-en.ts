@@ -133,11 +133,63 @@
         <source>Creating the expense failed: %1</source>
         <translation>Creating the expense failed: %1</translation>
     </message>
+    <message id="activities.title">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="26"/>
+        <source>Activities</source>
+        <translation>Activities</translation>
+    </message>
+    <message id="activities.error.fetching">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="46"/>
+        <source>There was an error while fetching activities: %1</source>
+        <translation>There was an error while fetching activities: %1</translation>
+    </message>
     <message id="add_group.error.fetch_more">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="54"/>
         <location filename="../qml/pages/GroupDetailPage.qml" line="114"/>
         <location filename="../qml/pages/GroupDetailPage.qml" line="122"/>
         <source>Failed fetching more expenses from the api</source>
         <translation>Failed fetching more expenses from the api</translation>
+    </message>
+    <message id="activity.unknown">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="84"/>
+        <source>Unknown activity type</source>
+        <translation>Unknown activity type</translation>
+    </message>
+    <message id="activity.update_group">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="116"/>
+        <source>Group was updated by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation>Group was updated by &lt;strong&gt;%1&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.create_expense.with_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="121"/>
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was created by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <oldsource>Expense &lt;i&gt;%1&lt;/i&gt; was created by &lt;strong&gt;%2&lt;/strong&gt;</oldsource>
+        <translation>Expense &lt;i&gt;%1&lt;/i&gt; was created by &lt;strong&gt;%2&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.create_expense.no_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="124"/>
+        <source>Expense was created by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation>Expense was created by &lt;strong&gt;%1&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.update_expense.with_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="130"/>
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was updated by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <translation>Expense &lt;i&gt;%1&lt;/i&gt; was updated by &lt;strong&gt;%2&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.update_expense.no_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="133"/>
+        <source>Expense was updated by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation>Expense was updated by &lt;strong&gt;%1&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.delete_expense.with_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="139"/>
+        <source>Expense &lt;i&gt;%1&lt;/i&gt; was deleted by &lt;strong&gt;%2&lt;/strong&gt;.</source>
+        <translation>Expense &lt;i&gt;%1&lt;/i&gt; was deleted by &lt;strong&gt;%2&lt;/strong&gt;.</translation>
+    </message>
+    <message id="activity.delete_expense.no_name">
+        <location filename="../qml/pages/ActivitiesPage.qml" line="142"/>
+        <source>Expense was deleted by &lt;strong&gt;%1&lt;/strong&gt;.</source>
+        <translation>Expense was deleted by &lt;strong&gt;%1&lt;/strong&gt;.</translation>
     </message>
     <message id="group_detail.error.updating_failed">
         <location filename="../qml/pages/GroupDetailPage.qml" line="148"/>
@@ -149,29 +201,34 @@
         <source>Failed updating group: %1</source>
         <translation>Failed updating group: %1</translation>
     </message>
-    <message id="group_detail.change_group">
+    <message id="group_detail.activities">
         <location filename="../qml/pages/GroupDetailPage.qml" line="191"/>
+        <source>Activities</source>
+        <translation>Activities</translation>
+    </message>
+    <message id="group_detail.change_group">
+        <location filename="../qml/pages/GroupDetailPage.qml" line="202"/>
         <source>Groups</source>
         <oldsource>Change group</oldsource>
         <translation>Groups</translation>
     </message>
     <message id="global.settings">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="200"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="211"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message id="group_detail.add_expense">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="227"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="238"/>
         <source>Add expense</source>
         <translation>Add expense</translation>
     </message>
     <message id="group_detail.no_expenses">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="254"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="265"/>
         <source>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</source>
         <translation>Wouldn&apos;t you look at that, no expenses yet! Why don&apos;t you create your first?</translation>
     </message>
     <message id="add_expense.confirm_text">
-        <location filename="../qml/pages/GroupDetailPage.qml" line="273"/>
+        <location filename="../qml/pages/GroupDetailPage.qml" line="284"/>
         <source>Update expense</source>
         <translation>Update expense</translation>
     </message>
@@ -348,6 +405,8 @@
         <location filename="../qml/components/ExpenseRow.qml" line="29"/>
         <location filename="../qml/components/ExpenseRow.qml" line="34"/>
         <location filename="../qml/components/ExpenseRow.qml" line="40"/>
+        <location filename="../qml/pages/ActivitiesPage.qml" line="109"/>
+        <location filename="../qml/pages/ActivitiesPage.qml" line="111"/>
         <location filename="../qml/pages/BalancesPage.qml" line="159"/>
         <location filename="../qml/pages/BalancesPage.qml" line="164"/>
         <source>Unknown</source>
