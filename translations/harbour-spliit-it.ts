@@ -352,17 +352,17 @@
         <translation>Automatica</translation>
     </message>
     <message id="settings.language.label">
-        <location filename="../qml/pages/SettingsDialog.qml" line="46"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="47"/>
         <source>Language</source>
         <translation>Lingua</translation>
     </message>
     <message id="settings.current_participant">
-        <location filename="../qml/pages/SettingsDialog.qml" line="72"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="73"/>
         <source>Active user</source>
         <translation>Utente attivo</translation>
     </message>
     <message id="settings.section.group">
-        <location filename="../qml/pages/SettingsDialog.qml" line="91"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="92"/>
         <source>Group Settings</source>
         <translation>Impostazioni gruppo</translation>
     </message>
@@ -373,31 +373,31 @@
     </message>
     <message id="settings.group_name">
         <location filename="../qml/pages/CreateGroupDialog.qml" line="33"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="97"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="98"/>
         <source>Group name</source>
         <translation>Nome gruppo</translation>
     </message>
     <message id="settings.currency">
         <location filename="../qml/pages/CreateGroupDialog.qml" line="45"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="110"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="111"/>
         <source>Main currency</source>
         <translation>Valuta principale</translation>
     </message>
     <message id="settings.group_information">
         <location filename="../qml/pages/CreateGroupDialog.qml" line="67"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="132"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="133"/>
         <source>Group information</source>
         <translation>Informazioni gruppo</translation>
     </message>
     <message id="settings.participants">
         <location filename="../qml/pages/CreateGroupDialog.qml" line="80"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="146"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="147"/>
         <source>Participants</source>
         <translation>Partecipanti</translation>
     </message>
     <message id="settings.add_participant">
         <location filename="../qml/pages/CreateGroupDialog.qml" line="107"/>
-        <location filename="../qml/pages/SettingsDialog.qml" line="175"/>
+        <location filename="../qml/pages/SettingsDialog.qml" line="176"/>
         <source>Add participant</source>
         <translation>Aggiungi partecipante</translation>
     </message>

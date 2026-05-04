@@ -96,7 +96,8 @@ CONFIG += sailfishapp_i18n sailfishapp_i18n_idbased
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-spliit-en.ts \
-                translations/harbour-spliit-cs.ts
+                translations/harbour-spliit-cs.ts \
+                translations/harbour-spliit-it.ts
 
 HEADERS += \
     src/appsettings.h \
