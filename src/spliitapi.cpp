@@ -220,7 +220,7 @@ void SpliitApi::getStats(const QString &groupId, const QString &participantId)
     }
 
     runRequest(
-        "groups.stats.get",
+        "groups.stats.overview",
         input,
         "Invalid JSON when getting stats",
         [this](const QJsonObject &response) {emit statsFetched(response);},
